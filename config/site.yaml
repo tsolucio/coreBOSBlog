@@ -1,0 +1,12 @@
+title: coreBOSBlog
+author:
+  name: Joe Bordes
+  email: 'joe@tsolucio.com'
+blog:
+  route: ''
+metadata:
+  description: 'coreBOS. The one stop opensource software solution for your business.'
+  keywords: 'business,opensource,crm,software,management'
+  author: 'Joe Bordes'
+taxonomies: [business,opensource,crm,software,management]
+
