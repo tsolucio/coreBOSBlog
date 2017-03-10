@@ -8,5 +8,5 @@ metadata:
   description: 'coreBOS. The one stop opensource software solution for your business.'
   keywords: 'business,opensource,crm,software,management'
   author: 'Joe Bordes'
-taxonomies: [business,opensource,crm,software,management]
+taxonomies: [tag]
 
