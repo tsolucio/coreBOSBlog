@@ -5,6 +5,17 @@
 	<h4>coreBOS Blog</h4>
 	<p>Here we try to inform about all the action that is happening on the development of the <a href="https://github.com/tsolucio/corebos">main project</a> and all its' satellite applications in a more human understandable form and also create a space where we can talk about our opinions and future ideas for coreBOS. <b>Welcome!</b></p>
 </div>
+<div class="sidebar-content rrssb-buttons">
+    <h4>{{ 'Follow Us'|t }}</h4>
+    {% include 'partials/_googleplusfollow.html.twig' %}
+    {% include 'partials/_facebookfollow.html.twig' %}
+    {% include 'partials/_linkedinfollow.html.twig' %}
+</div>
+<div class="sidebar-content rrssb-buttons" style="margin-top:80px;">
+    {% include 'partials/_github.html.twig' %}
+    {% include 'partials/_emailcontact.html.twig' %}
+    {% include 'partials/_subscribe.html.twig' %}
+</div>
 {% if config.plugins.simplesearch.enabled %}
 <div class="sidebar-content">
     <h4>{{ 'SIDEBAR.SIMPLE_SEARCH.HEADLINE'|t }}</h4>
@@ -15,16 +26,16 @@
     <h4>{{ 'SIDEBAR.RELATED_POSTS.HEADLINE'|t }}</h4>
     {% include 'partials/relatedpages.html.twig' %}
 {% endif %}
-{% if config.plugins.random.enabled %}
-<div class="sidebar-content">
-	<h4>{{ 'SIDEBAR.RANDOM_ARTICLE.HEADLINE'|t }}</h4>
-	<a class="button" href="{{ base_url }}/random"><i class="fa fa-retweet"></i> {{ 'SIDEBAR.RANDOM_ARTICLE.FEELING_LUCKY'|t }}</a>
-</div>
-{% endif %}
 {% if config.plugins.taxonomylist.enabled %}
 <div class="sidebar-content">
     <h4>{{ 'SIDEBAR.POPULAR_TAGS.HEADLINE'|t }}</h4>
     {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
+</div>
+{% endif %}
+{% if config.plugins.random.enabled %}
+<div class="sidebar-content">
+	<h4>{{ 'SIDEBAR.RANDOM_ARTICLE.HEADLINE'|t }}</h4>
+	<a class="button" href="{{ base_url }}/random"><i class="fa fa-retweet"></i> {{ 'SIDEBAR.RANDOM_ARTICLE.FEELING_LUCKY'|t }}</a>
 </div>
 {% endif %}
 {% if config.plugins.archives.enabled %}

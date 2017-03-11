@@ -65,6 +65,10 @@
             {{ page.content }}
         </div>
 
+        <div style="width:60%;margin:auto;">
+        {% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+        </div>
+
         {% if config.plugins.comments.enabled %}
             {% include 'partials/comments.html.twig' %}
         {% endif %}
