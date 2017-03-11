@@ -32,3 +32,9 @@ debugger:
   twig: true
   shutdown:
     close_connection: true
+
+languages:
+  translations: true
+  supported:
+    - en
+    - es
