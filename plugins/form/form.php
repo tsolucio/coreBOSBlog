@@ -400,6 +400,9 @@ class FormPlugin extends Plugin
                     $body = $twig->processString(!empty($params['body']) ? $params['body'] : '{% include "forms/data.txt.twig" %}',
                         $vars);
                     $file->save($body);
+                    if (substr($filename, 0, strlen('cbsubscribe-'))=='cbsubscribe-') {
+                        include 'user/plugins/form/send_subscribe2corebos.php';
+                    }
                 } elseif ($operation == 'add') {
                     if (!empty($params['body'])) {
                         // use body similar to 'create' action and append to file as a log
