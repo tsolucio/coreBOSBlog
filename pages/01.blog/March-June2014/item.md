@@ -46,7 +46,9 @@ On the developer side
  - minor workflow enhancements
 
  !!! We release coreBOS 5.5 on June 30th
- 
+
+You can find a [full list of changes here](http://corebos.org/documentation/doku.php?id=en:devel:upgradecb542cb55changes).
+
 All this necessary work conforms that **background noise** that is a **constant in coreBOS** even today and that you will see in all the posts.
 
  !! Every day, every week coreBOS changes!
