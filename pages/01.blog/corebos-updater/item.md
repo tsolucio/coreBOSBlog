@@ -2,7 +2,7 @@
 title: coreBOS Updater
 date: 2014/07/23 11:56
 metadata:
-    description: 'Initial post: coreBOS opensource project started'
+    description: 'coreBOS updater: keep your coreBOS up to date'
     keywords: 'CRM, vtiger, opensource, fork'
     author: 'Joe Bordes'
 header_image_file: cbupdater.png
@@ -10,7 +10,7 @@ header_image_height: 200
 header_image_width: 200
 taxonomy:
     category: blog
-    tag: [fork, start, release]
+    tag: [fork, start, release, updater]
 ---
 
 ###How to keep your coreBOS application up to date
