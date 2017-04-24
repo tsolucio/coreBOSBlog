@@ -19,6 +19,6 @@ Thanks to our team member [Bernat Arlandis](http://bernatarlandis.com/) we now h
 
 This project will even permit us to create more than one record which is a typical use case in many scenarios because somebody who has been spending some time on your website and bothers in asking you some questions is definitely not a lead but a **good business opportunity**.
 
-[Read all about it on the **projects' wiki/documentation** page](http://corebos.org/documentation/doku.php?id=en:devel:coreboswswebform).
+[Read all about it on the **projects' wiki/documentation** page](http://corebos.org/documentation/doku.php?id=en:devel:coreboswswebform&noprocess).
 
 [Get the code and test it out on github](https://github.com/tsolucio/coreBOSwsWebform)

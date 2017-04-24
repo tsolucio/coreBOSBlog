@@ -24,5 +24,5 @@ Thanks!
  * [Online demo](http://corebos.org/demos/coreboscp)
  * [Associated coreBOS Online Demo](http://corebos.org/demos/corebos)
  * [Short video demonstration](http://youtu.be/x1yb1NnCw78)
- * [Documentation](http://corebos.org/documentation/doku.php?id=en:devel:coreboscp)
+ * [Documentation](http://corebos.org/documentation/doku.php?id=en:devel:coreboscp&noprocess)
  * [Code](http://github.com/tsolucio/coreboscp)

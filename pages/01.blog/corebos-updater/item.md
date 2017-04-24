@@ -38,4 +38,4 @@ So with the approach above and the fact that the majority of changes we make are
 
 Going forward **all future releases of coreBOS will follow this procedure** to apply database changes for the upgrades.
 
-[Read all about it on the projects wiki/documentation page](http://corebos.org/documentation/doku.php?id=en:devel:corebosupdater).
+[Read all about it on the projects wiki/documentation page](http://corebos.org/documentation/doku.php?id=en:devel:corebosupdater&noprocess).

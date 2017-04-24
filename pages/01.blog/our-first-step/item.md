@@ -23,6 +23,6 @@ If you apply all the changes you will arrive at **coreBOS 5.4**, welcome to the 
 
 You can download a fresh copy from GitHub, and from our ~~Downloads page~~.
 
-You will find all the [details of changes and steps to upgrade here](http://corebos.org/documentation/doku.php?id=en:upgradevt2cb540).
+You will find all the [details of changes and steps to upgrade here](http://corebos.org/documentation/doku.php?id=en:upgradevt2cb540&noprocess).
 
 Keep watching :-) 

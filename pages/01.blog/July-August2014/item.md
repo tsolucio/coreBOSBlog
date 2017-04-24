@@ -52,7 +52,7 @@ Among other libraries that we have created and maintain.
 
  ! Add payment module
 
-We added [our payment module](http://corebos.org/documentation/doku.php?id=en:coreboscyp) that we had developed for vtiger CRM and add support for a generic **Payment Gateway** directly inside the application, using the [Omnipay Library](https://github.com/thephpleague/omnipay).
+We added [our payment module](http://corebos.org/documentation/doku.php?id=en:coreboscyp&noprocess) that we had developed for vtiger CRM and add support for a generic **Payment Gateway** directly inside the application, using the [Omnipay Library](https://github.com/thephpleague/omnipay).
 
  ! Workflow expression and other enhancements
 
@@ -61,7 +61,7 @@ We continuously enhance the Workflow interface to make coreBOS easier to work wi
 - More expressions for conditions
 - Relate Sales, which permits you to fill the accounts and contacts product list with products sold to them on invoices
 - Tag Task (see above)
-- [evalworkflow script](http://corebos.org/documentation/doku.php?id=en:devel:helperscripts#evalwfphp) a VERY powerful workflow debugging tool
+- [evalworkflow script](http://corebos.org/documentation/doku.php?noprocess&id=en:devel:helperscripts#evalwfphp) a VERY powerful workflow debugging tool
 
 Among other fixes and adjustments.
 
@@ -71,7 +71,7 @@ This is one of those fixes that should have been added years ago. In certain fil
 
  ! Filter meta variables: user and dates
 
-[Meta variables for special fields: Current User and blank date](http://corebos.org/documentation/doku.php?id=en:using_filters#meta_variables_for_special_fields)
+[Meta variables for special fields: Current User and blank date](http://corebos.org/documentation/doku.php?id=en:using_filters#meta_variables_for_special_fields&noprocess)
 
  ! Block dependent picklists to avoid inconsistencies
 

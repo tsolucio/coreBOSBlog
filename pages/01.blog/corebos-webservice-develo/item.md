@@ -26,9 +26,9 @@ Both projects are very stable and won't be seeing full roadmaps and release sche
 The projects are **fully open source and available on GitHub**, so feel free to come on over and help out.
 
  - [Web service library on GitHub](https://github.com/tsolucio/coreBOSwsLibrary).
- - [Web service library documentation](http://corebos.org/documentation/doku.php?id=en:devel:corebosws).
+ - [Web service library documentation](http://corebos.org/documentation/doku.php?id=en:devel:corebosws&noprocess).
  - [Web service developer tool](https://github.com/tsolucio/coreBOSwsBrowser).
- - [Web service developer tool documentation](http://corebos.org/documentation/doku.php?id=en:devel:corebosws:coreboswsbrowser).
+ - [Web service developer tool documentation](http://corebos.org/documentation/doku.php?id=en:devel:corebosws:coreboswsbrowser&noprocess).
 
  ### Developer Tool Presentation video
 

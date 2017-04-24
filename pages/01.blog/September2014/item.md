@@ -15,6 +15,8 @@ taxonomy:
 
 September is usually a slow month as we are getting back to the routine after the summer slow down and I get a some relax time. However coreBOS gets some really important features in September 2014 as we continue to create a stable, feature rich and powerful platform to manage your business.
 
+===
+
 ### Development
 
  ! Spreadsheet currency export enhancements
@@ -53,7 +55,7 @@ In our constant **webservice interface** enhancements we add a whole set for new
 
  ! Developer Enhancements
 
- - [Popup capture hook](http://corebos.org/documentation/doku.php?id=en:devel:corebos_hooks:popup_capture_hook)
+ - [Popup capture hook](http://corebos.org/documentation/doku.php?id=en:devel:corebos_hooks:popup_capture_hook&noprocess)
  - getfieldfromblockarray to access and manipulate the display blocks array which has a very complex structure
 
 .

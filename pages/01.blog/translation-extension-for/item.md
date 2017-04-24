@@ -25,6 +25,6 @@ To access the translator you must login as an admin user and go to the **Module 
 
 ![coreBOS Translator](trtr.png)
 
-You can get some [additional information on the wiki](http://corebos.org/documentation/doku.php?id=en:devel:translating).
+You can get some [additional information on the wiki](http://corebos.org/documentation/doku.php?id=en:devel:translating&noprocess).
 
 **<p style="font-size: larger">Happy Translating!!</p>**
