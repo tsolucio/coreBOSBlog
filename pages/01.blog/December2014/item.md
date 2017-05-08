@@ -39,7 +39,14 @@ In order to access the application via the webservice interface you need a user 
 
 I understand that this was done for security issues, so we don't send our user password through the internet and,  in case the access key is compromised the malicious user will only be able to access that information available in the webservice application, not everything that is accessible via the main application, but I must admit that this system confuses the users and adds no real security as you can use the compromised key to access via the webservice development tool, for example.
 
-In any case we added the possibility for the webservice application developer to decide how he wants his users to access the application. He can continue to use the access key, which is the default method or he can access using the users password by adding the with password parameter to the login call, like this:
+In any case we added the possibility for the webservice application developer to decide how he wants his users to access the application. He can continue to use the access key, which is the default method or he can access using the users password by adding the **withpassword** parameter to the login call, like this:
+
+```
+...
+$withpassword = true;
+$login = $client->doLogin($username, $password, $withpassword);
+...
+```
 
 You can actually see this working in the [Webservice Development Tool](../corebos-webservice-develo)
 
