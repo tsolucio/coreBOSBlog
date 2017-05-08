@@ -52,7 +52,7 @@ We inherited from vtiger crm a curious feature whereas you will receive in your 
 
  ! Composer installer
 
-This is a very important **implementor feature** called **Perspectives** which I will explain in an individual blog post after this one.
+This is a very important **implementor feature** called **Perspectives** which [I explain in an individual blog post](../cbPerspective).
 
 
  ! Make all blocks in detail view sortable, even detail view widgets and custom blocks
