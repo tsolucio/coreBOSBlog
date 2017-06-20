@@ -38,4 +38,4 @@ I must say that the default tax settings is mostly complete, especially in coreB
 
 [plugin:youtube](https://youtu.be/nKT8p9Af-Zc)
 
-
+ !!! We completely substitute the existing tax logic with a new way of managing tax without modifying one line of code in coreBOS base application!
