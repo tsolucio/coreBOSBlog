@@ -72,9 +72,9 @@ We add a javascript class that permits the developer to plug in their functional
 
  ! Convert campaigns to a normal module
 
-As we tend to standadrize the base module code we also modify the application standard modules to make them use this base so they all have the same functionality and directly inherit the new functionality.
+As we tend to standardize the base module code we also modify the application standard modules to make them use this base so they all have the same functionality and directly inherit the new functionality.
 
-This month we clean up and standadrize the campaign module giving it support for import, export, and deduplication, among others.
+This month we clean up and standardize the campaign module giving it support for import, export, and deduplication, among others.
 
  ! Global variables
 
