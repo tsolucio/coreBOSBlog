@@ -20,7 +20,7 @@ We dedicate August and September of 2015 to some long running projects. So, alth
  ! Long running projects
 
  - PHP version 5.6 support
- - Sart working on PHP version 7.0 support
+ - Start working on PHP version 7.0 support
  - Start elimination of prototype and move to native javascript and jQuery
 
 <br/>
