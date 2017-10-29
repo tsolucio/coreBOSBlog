@@ -115,7 +115,7 @@ We take the first steps to upgrade Smarty, eliminate PHP and other syntax change
 
  ! Reports day Grouping
 
-This reporting option does not permit you to make aggregations on rows, it simply sorts the records based on the date part selected. So all the values of the same day will be together no matter what month or year they are from. We are selecting how to order the records, not how to aggregte them.
+This reporting option does not permit you to make aggregations on rows, it simply sorts the records based on the date part selected. So all the values of the same day will be together no matter what month or year they are from. We are selecting how to order the records, not how to aggregate them.
 
 ![Reports day Grouping](ReportGroupByDay.png)
 
