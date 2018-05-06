@@ -17,7 +17,7 @@ Tagging is an incredibly simple and powerful concept used in many applications a
 
 ===
 
-By adding a tab to an object we automatically create an implicit category where any heterogeneous set of objects can be grouped. We can mix any type of object into the set defined by the tag.
+By adding a tag to an object we automatically create an implicit category where any heterogeneous set of objects can be grouped. We can mix any type of object into the set defined by the tag.
 
 The wiki definition is very helpful and clear.
 
@@ -36,7 +36,7 @@ Tagging is activated per user in their preferences tab. You can also define how 
 
 ![Tag Cloud Config](TagCloudConfig.gif)
 
-Once active the tagging widget appears in the right side action panel where we will be able to apply tags as well as see a list of the already applied ones. We can also eliminate any tag in the widget.
+Once active, the tagging widget appears in the right side action panel where we will be able to apply tags as well as see a list of the already applied ones. We can also eliminate any tag in the widget.
 
 ![Tag Managment](TagManagment.png)
 
