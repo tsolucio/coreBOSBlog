@@ -1,6 +1,6 @@
 ---
 title: Weekend Warnings with Workflows
-date: 2018/07/29 13:08
+date: 2018/06/24 13:08
 metadata:
     description: 'Learn how to send out warning messages for records created on the weekends with the workflow system.'
     keywords: 'CRM, vtiger, opensource, corebos, workflow, message, howto'
