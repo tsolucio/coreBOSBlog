@@ -78,6 +78,6 @@ Some interesting development enhancements in Webservice that will make your sate
 
 <span></span>
 
-![September Insights](corebosgithub1810.png)
+![October Insights](corebosgithub1810.png)
 
 **<span style="font-size:large">Thanks for reading.</span>**
