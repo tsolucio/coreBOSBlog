@@ -136,7 +136,7 @@ Your proposal sounds like a very sane approach and would probably avoid a lot of
 
 Thank you VERY much for the time and sharing the knowledge, it has been extremely useful, even for me. :-)
 
-Note: I [added a reference to this article](https://corebos.com/documentation/doku.php?id=en:devel:saverecordfromwithin) in the wiki.
+**Note:** I [added a reference to this article](https://corebos.com/documentation/doku.php?noprocess=1&id=en:devel:saverecordfromwithin) in the wiki.
 
 
 Cover Photo by David Lázaro on Unsplash
