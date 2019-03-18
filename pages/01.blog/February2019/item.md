@@ -50,7 +50,7 @@ A short month but with a good punch. This month finds us mainly concentrated on 
 
  ! WhatsApp Integration
 
-With the new [WhatsApp for business](2do) support in [Twillio](2do) we create an integration with the service so you can send messages to your customers through the workflow system. You can find all the details on [how to configure it in the documentation wiki](2do)
+With the new [WhatsApp for business](https://www.whatsapp.com/business/api) support in [Twillio](https://www.twilio.com/whatsapp) we create an integration with the service so you can send messages to your customers through the workflow system. You can find all the details on [how to configure it in the documentation wiki](http://corebos.com/documentation/doku.php?id=en:integrations:whatsapp&noprocess=1)
 
  - add and adjust the Message module and use it to register message sent through WhatsApp and their status
  - WhatsApp configuration, workflow task UI and functionality
