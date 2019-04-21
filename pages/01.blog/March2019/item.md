@@ -1,104 +1,212 @@
 ---
-title: March 2018
-date: 2018/04/15 01:08
+title: March 2019
+date: 2019/04/21 18:08
 metadata:
-    description: 'coreBOS work during March 2018.'
+    description: 'coreBOS work during March 2019.'
     keywords: 'CRM, vtiger, opensource, corebos'
     author: 'Joe Bordes'
 header_image_file: March.png
-header_image_height: 132
-header_image_width: 441
+header_image_height: 123
+header_image_width: 420
 taxonomy:
     category: blog
-    tag: [development, 2018, functionality]
+    tag: [development, 2019, functionality]
 ---
 
-We continue dedicating a lot of time to standardizing the code, we finish the On-Demand functionality and add a whole set of functionality to move along our goal to create a flexible, fast and secure framework upon which to base your business.
+This month we start another long-running project to update and release all the closed code in coreboscrm and as a [birthday present](../happy_birthday_2019) coreBOS gets three new modules and a whole bunch of new functionality while we keep up the constant evergreen updates and fixes. Enjoy!
 
 ===
 
- ! coreBOS Standard Code Formatting, Security, Optimizations and Clean Up
+ ! Release closed code project
 
-100 code formatting and cleanup commits that affect every part of the application. It is a very big effort to get all the code looking similar before we start refactoring the UI, but also we eliminate redundant code, make micro-optimizations, eliminate warnings and fix some bugs in a clear goal to make the application faster, less memory intensive and more secure.
+We are working on standardizing and releasing most of the closed code we have. This is more work than it seems as some extensions need to be adapted to the current functionality in coreBOS and others require changing libraries which have a closed source license (which is mainly why they weren't already being shared openly). In this ongoing effort, this month sees two extensions arrive: **Document Generator** and **Message Templates**.
 
- - reduce SQL columns and eliminate duplicate variable assignment in calendar and CRMEntity
- - eliminate function in favor of direct SQL execution in Documents
- - eliminate redundant code in merge email template now that most modules are normal
- - eliminate unnecessary condition and webmails module dependencies which are obsolete from Emails and MailManager
- - eliminate duplicate code in main javascript module, Reports, Inventory modules and Products
- - assign and return values directly, eliminate unused variables and obsolete code in utils, Reports, and RecycleBin
- - refactor DateTime Field: create new private method getDTComponents from duplicate code
- - refactor Reports: move duplicate functions to common location: getVisibleCriteria and getShareInfo
- - security in Reports by cleaning variable being sent to the browser and eliminate unnecessary assignment
- - security in RSS by filtering input variables
- - rename .inc file in menu
+<span></span>
 
-<br/>
+ ! Release Document Generator Module
+
+Our proposal project for formatting output is released into the coreBOS project. Now you will be able to easily create OpenOffice templates for your invoices and similar outputs. We also move the native OpenOffice and RTF merging capabilities on Accounts, Contacts, Leads and Support Tickets to the same Document based configuration in order to eliminate the admin settings section and some legacy code.
+
+You can read all about [Document Generator Templates on the wiki](http://corebos.com/documentation/doku.php?noprocess=1&id=en:extensions:extensions:gendoc).
+
+ - released GenDoc as standard service
+ - released GenDoc Label Helper extension
+ - integrate OOMerge with GenDoc functionality
+ - eliminate obsolete specific code for OOMerge which is now using GenDoc infrastructure
+
+<span></span>
+
+ ! Release Message Template Module
+
+An application like coreBOS requires a powerful and flexible templating management system for emails, SMS and Whatsapp messages (among others). We create a workflow syntax based template system that is capable of understanding the previous, much more limited syntax in order to maintain backward compatibility while giving the new messages all the power they need. We substitute the existing template capture features with this new module and add support for related documents.
+
+ - fill in field picklist and insert into the body
+ - load meta variables only if picklist is available
+ - migrate templates usage to new module: workflow, mail manager and email send screen
+ - migrate email templates to the new module and eliminate settings section
+ - load attachments from MsgTemplate: if documents are related with the message template these will be added to the email when the template is selected
+
+<span></span>
+
+ ! Features/Implementor
+ - transfer calendar records on Accounts and HelpDesk when deduplicating
+ - transfer more related entities on Leads conversion
+ - add globally accessible **getCRUDMode** method to make Business Validation and Condition Expression more flexible
+ - add **go back** button on [MassEdit1x1](../xmaspresents18) feature
+ - allow uitype 14 fields to show and save more than 23 hours
+ - convert User List to BunnyJS Grid
+ - send password change email to users if the Application_SendUserPasswordByEmail Global Variable is set
+ - add native Partita IVA validation for our Italian users
+ - add a condition for multiple fields on notDuplicate Validation [Thanks Timothy](https://github.com/tebajanga)
+ - including **requiredWith** and **requiredWithout** on the Validations Business map. [Thanks Timothy](https://github.com/tebajanga)
+ - adding SMS support for vendors
+ - permit user to define return URL protocol on Webforms so we can support https, by default we still use http to maintain backward compatibility
+ - fix Vendors contacts related list to support adding contacts directly from that related list if the option is added
+ - do not show inactive modules and respect module entry label if changed in Menu
+ - format 0 for consistent user preferences
+ - Business Maps XSD based validations. Very useful job from [Glory](https://github.com/glorymoshi) which permits us to validate the XML of our business maps without leaving the application
+
+<span></span>
+
+ ! Workflow Enhancements
+
+This is our non-stop project: making the workflow system more and more powerful with each iteration.
+
+ - EmailTask: add the use of message template and attachments associated with the template into drop-zone
+ - **EmailTask: if an attachment is a GenDoc template, merge and send the result, not the template**
+ - EmailTask: create a message for workflow email to register and track these emails
+ - many to one update workflow update one module per task
+ - add a condition to mass related update so we can conditionally update only some related records
+ - testing and adjusting mass related record update
+ - fix an error referencing null object on expressions
+ - include external functions only once
+ - move "evaluate on execute" in workflow task to make it clearer that it is only used on delayed tasks
+ - retrieve record despite sharing privileges when performing update field task and standardize method call
+ - correctly manage translated field names
+ - **LOGICAL OPERATORS:** Elisa calls our attention to the fact that the workflow system doesn't have the possibility to easily evaluate logical conditions. This makes creating business rules and validation business maps more complicated than it should be so we set out to slowly start adding this type of support. This month not only sees the birth of this feature but also implements four operators. [Thanks Timothy](https://github.com/tebajanga)
+   - add **isNumeric** and **isString** logical operators methods
+   - add **OR** and **AND** methods, so we can do cool evaluations like this
+
+```
+AND(isString($(account_id : (Accounts) accountname)), isNumeric($(account_id : (Accounts) employees)))
+```
+
+<span></span>
 
  ! Developer
- - enhance getEntityField to return FQN
- - **Field Set Business Mapping**. A new business map arrives that will permit you to define a heterogeneous set of fields from any modules. It is used, for example, to define the set of fields to sync between satellite and master coreBOS on demand installs.
- - sanitizeTime method which permits you to convert any DateTime field to the current user's timezone
- - option to not reload document listview after file folder move or generic listview after mass delete operation. In certain AJAX based actions on Documents and Mass Delete the full result of the new List View is returned only to be discarded by the javascript function. In this scenario, we can use the parameter **__NoReload** to avoid the generation and transfer making the operation MUCH faster.
- - translation infrastructure to override default translations with custom ones. We can now easily customize our translations without modifying the base translation files. In any language directory we can create a file named **{language_prefix}.custom.php** and put inside a variable called **$custom_strings** which will be an array of labels that will override the existing labels.
- - modify getPricesForProducts to return cost_price if needed
- - support for standard application message on List View via the standard **error_msg** and **error_msgclass** parameters
- - getOrderByColumn method to get the correct _order by_ specification for all types of fields in QueryGenerator
- - _changelabel_ and _changestatus_ events for taxes. Thanks [Luke](https://github.com/Luke1982)
- - getRelatedListInfo action in ExecuteFuncions to retrieve Related List Info from the relation ID. Thanks [Kiko](https://github.com/kikojover)
- - send browser variables to Popup for correct validations inside popup (for quick create)
- - support for preSaveCheck hook in MassEdit
+ - we add support for context variables in Business Questions and pass that context into the detail view widget which permits us to do some really cool things [like these graphs](http://corebos.com/documentation/doku.php?noprocess=1&id=en:devel:add_special_block#developer_blocks)
+ - support for setting business rule when creating Business Actions
+ - **range operators** for QueryGenerator. These four new operators permit us to easily define intervals of number and text fields as [can be seen in our unit tests](https://github.com/tsolucio/coreBOSTests/blob/master/include/QueryGenerator/QueryGeneratorTest.php#L1285). The new operators are:
+  - [] both start and end values are included in the range
+  - [[ start is include and end is excluded from the range
+  - ]] start is excluded and end is included in the range
+  - ][ both start and end values are excluded from the range
+ - Condition Expression Business Maps now support a new type that compiles workflow templates
+ - a new method in CRMEntity named **retrieve_entities_info** permits us to retrieve a set of CRMIDs in one call
+ - Emails module gets a revamp this month with a whole new set of hooks and abstractions that permit us to completely override the emailing system. Right now our default email system is [PHPMailer](https://github.com/PHPMailer/PHPMailer) but with the changes in the Emails module, you can now program the application to use any other system you want. We will be releasing an integration with [SendGrid](https://sendgrid.com/) very soon and I plan to dedicate the next blog post to explain how these changes work
+   - hooks for intercepting email sending
+   - getMergedDescription now merges workflow syntax variables after all old format has been done
+   - getAllAttachments function to get all the related files as attachments
+   - support attachment files as an array of name and full path in send email
+ - add full Users image information with the same structure that we use in web service to the user object
+ - add Webservice support for Business Mapping global variables and return the JSON structure of the business map also
+ - add **[MassDelete](https://github.com/tsolucio/corebos/blob/master/include/Webservices/MassDelete.php)** web service endpoint to delete multiple records at once. [Thanks Kliv](https://github.com/klivstudiosynthesis)
+ - add **[upsert](https://github.com/tsolucio/corebos/blob/master/include/Webservices/upsert.php)** web service endpoint. [Thanks Kliv](https://github.com/klivstudiosynthesis)
+ - dereference IDs and Images for consistent return format in Update and Revise and html-decode reference names
 
-<br/>
+<span></span>
 
- ! On-Demand
+ ! Developer Action Call: a new pattern for actions
 
-Lookout for a blog post on this awesome functionality!
+[Albert](https://github.com/albertxhani) proposes and constructs a new way to call actions. Closer to pure MVC, this form of executing code will permit us to call class methods directly which makes for a more structured code.
 
- - central sync server variables
- - users with permission to get full sync information for on-demand sync service
- - more user change log information
+The action must be called like this:
+```
+index.php?action=index&module=Leads&action=LeadsAjax&actionname=test&method=init
+```
 
-<br/>
+where `actionname` is the class name that contains our actions and `method` is the name of the method we want to execute inside the class.
 
- ! Reports
- - external report URL opened in new tab. Thanks to [denaldd](https://github.com/denaldd) for fixing this functionality which now correctly opens URL reports in their own tab
- - permit field customization by calling module method before showing values on the screen. This very useful functionality is a first stepping stone towards colored formatting in reports. Keep an eye out for some additional changes and a blog post on this one in the months to come.
+The class must live inside the `actions` directory of the module and must be named exactly as indicated in the actionname parameter.
 
-![Report Custom Formatting](ReportsColorFormatted.png)
+So the above call would live in:
 
-<br/>
+`modules/Leads/actions/test.php`
+
+We can create multiple methods inside the action class and call each one given the method name in the
+URL (the same way a controller works in a MVC).
+
+There is an example in [this Pull Request](https://github.com/tsolucio/corebos/pull/490/files).
+
+[Thanks Albert](https://github.com/albertxhani)
+
+<span></span>
+
+ ! coreBOS Standard Code Formatting, Security, Optimizations and Clean Up
+
+ - constant formatting and warning battle: Changesets, Ajax/ListViewController, AssignedTo, BusinessMaps, CRMEntity, MailManager, MsgTemplate, Product, QueryGenerator, TransferRelatedRecords, Users, Workflow
+ - eliminate a block of repeated code in Developer Block
+ - fix comments and debug message in InventoryUtils
+ - Products avoid warnings on image field retrieving and saving
+ - Workflow review and format code for massive update many to one
+ - Debug Message Reduction project: CommontUtils (get merged description) and Workflow
+ - an optimization that avoids calling ispermitted if from_wf is true and avoid sending empty values if there is no access to the record (CRMEntity)
+ - simplify query in Documents
+ - security: retract executable bit
+ - Continuous Integration:
+   - add check on new changesets
+   - add php file lint
+   - include changesets
+   - my personal code validation check script, in case that helps someone
+   - add new executable file
+   - add new lint file to permitted executables
+
+<span></span>
 
  ! Others
- - load LDS CSS in popup
- - Changes to support Colorizer on Related Lists with a different name than the related module
- - Install TAX block and listen to new tax events in InventoryDetails. Fill in the new tax fields with the applied tax for each line
- - hide S&H taxes row if none are defined
- - add support for sorting on all fields, even special related field, thanks to the new function in query generator
- - send current IP to Login template so it can be shown if needed
- - MailManager_Show_SentTo_Links global variable which will permit you to hide the module based filters in Mail Manager
- - show field usage in red on delete field check
- - Get address in editview if account or contact is given
- - support HTML in application UI name via Application_UI_NameHTML global variable, so you can apply custom formatting to the header name
- - filter emails and closed events from calendar popup
- - respect user settings calender reminder interval NONE by not calling the backend every minute
- - fix incorrect variable for project detection in Mail Scanner
- - permit Edit on create, add preSaveCheck and standardize MassEditSave for the Payments module
- - fix mass document download. If we download some documents and after we want to download some others, the previous zip was not removed correctly and returned to the user both the first and second selection. Thanks [Omar](https://github.com/omarllorens)
- - fix Popup basic and advance search when we use next, previous, last and first icons navigation
- - base Convert Lead action on Edit permission not create
- - Leads email validation in convert form
- - set correct HTMLPurifier encoding in MailManager which was breaking on Windows
- - retrieve product cost when creating a Purchase Order from product action
- - fix Related Lists field values by moving the main table to end of select fields SQL so its fields dominate over other modules with the same field names. For example, if we have a Contacts related list that mixes account fields we would get the account phone number instead of the contacts because the field has the same name.
- - permit generating PDFs with special characters in the name in the Reports module
- - fix select fields validation with empty values
- - do not validate non-checked fields in mass edit
- - correctly recover saved user value and support only direct relation in workflow AssignRelatedTask
- - edit owner fields in workflow conditions
- - translations in Contacts, Emails, HelpDesk, ModComments, Products, and On-Demand
+ - now that we have eliminated the last Settings section we reorganize the ones that are left
+ - Application_User_SortBy: construct correct SQL with restricted user access
+ - get the right number of colors for the Business Question graph
+ - mysql strict in Calendar get activitytype
+ - urlencode activity types for Calendar popup edit
+ - eliminate duplicate call to transfer parent method in Campaigns
+ - fix select leads query in Campaigns
+ - mysql strict in Potentials Sales Stage history with hidden fields
+ - do not lose multicurrency/tax on Product/Service edit
+ - correct Products/Service multicurrency and taxes save from web service (they were being lost)
+ - Scheduled Reports: use attachment parameter instead of global REQUEST variable
+ - standardize report SQL group by field name
+ - Time validation: cap max hours at 838 since MySQL can't handle more
+ - add slashes to error message so it does not break javascript
+ - change typeofdata in Assets and Calendar date fields
+ - add some right padding on Currency fields for better UI
+ - emit complete Dropzone event on document attachment relation
+ - do not send template based email if the template is not found
+ - Send picklist values via POST for larger lists
+ - correct CSS for global autocomplete
+ - avoid validating inexistent images
+ - InventoryDetails:
+   - change sanitizeRetrieveEntityInfo to catch more fields
+   - eliminate errors in MasterDetail configuration when the user does not have access to InventoryDetails module
+   - error when trying to update inventory lines, sometimes the requestindex does not correspond with the line order that is returned by the query and updates data on the wrong line
+ - fix SQL query to return correct tax values
+ - correct action name on change password redirect
+ - update softed style.css: a few very nice CSS changes that make the application a bit nicer and faster. Thanks John.
+ - Continuous translation effort:
+  - correct label on Inventory Modules
+  - add label to field in delete related records workflow and apply LDS
+  - cbPulse
+  - Documents: merge template label
+  - Emails/Message: missing labels and pt_br
+  - Inventory: financial info block label
+  - MassEdit1x1: go back
+  - Services: multicurrency div header
+  - Settings: BPM header and code formatting
+  - Workflow: mass update related, more consistent translation and add a missing label
+  - Fix no space with - youhave - in the test email
+  - added and fixed German translations in many modules. [Thanks Henning](https://github.com/partnerwerk)
 
-![March Insights](corebosgithub1803.png)
+![March Insights](corebosgithub1903.png)
 
 **<span style="font-size:large">Thanks for reading.</span>**
 
