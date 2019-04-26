@@ -10,7 +10,7 @@ header_image_height: 326
 header_image_width: 302
 taxonomy:
     category: blog
-    tag: [development, 2015, email]
+    tag: [development, 2019, email]
 ---
 
 Recently I was tasked with taking charge of coreBOS project where the lead programmer had been doing some complex customizations. In general, the code changes I found were correct except for one that was done consistently wrong: **sending an email from within the system**. This struck me as very odd, I mean it can't be that difficult to send an email like that, or could it?
