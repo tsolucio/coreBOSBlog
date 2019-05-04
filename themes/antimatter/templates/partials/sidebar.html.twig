@@ -7,14 +7,19 @@
 </div>
 <div class="sidebar-content rrssb-buttons">
     <h4>{{ 'Follow Us'|t }}</h4>
-    {% include 'partials/_googleplusfollow.html.twig' %}
+    {% include 'partials/_twitterfollow.html.twig' %}
     {% include 'partials/_facebookfollow.html.twig' %}
     {% include 'partials/_linkedinfollow.html.twig' %}
 </div>
 <div class="sidebar-content rrssb-buttons" style="margin-top:80px;">
     {% include 'partials/_github.html.twig' %}
-    {% include 'partials/_twitterfollow.html.twig' %}
+    {% include 'partials/_youtube.html.twig' %}
     {% include 'partials/_subscribe.html.twig' %}
+</div>
+<div class="sidebar-content">
+    <h4>{{ 'Support Us'|t }}</h4>
+<script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#46b798', 'P5P7ARIR');kofiwidget2.draw();</script>
+<a href="https://www.patreon.com/bePatron?u=10179252" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
 </div>
 {% if config.plugins.simplesearch.enabled %}
 <div class="sidebar-content">

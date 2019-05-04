@@ -2,7 +2,7 @@
 title: Sending email from within coreBOS
 date: 2019/03/03 13:58
 metadata:
-    description: 'How to correctly send emails from within coreBOS dvelopment processes'
+    description: 'How to correctly send emails from within coreBOS development processes'
     keywords: 'CRM, vtiger, opensource, corebos, email'
     author: 'Joe Bordes'
 header_image_file: mikaela-wiedenhoff-693940-unsplash.jpg

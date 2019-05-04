@@ -7,7 +7,7 @@ buttons:
     enabled: true
     label: Twitter  
   googleplus: 
-    enabled: true
+    enabled: false
     label: Google+
   linkedin: 
     enabled: true
@@ -16,7 +16,7 @@ buttons:
     enabled: false
     label: Reddit  
   youtube: 
-    enabled: false
+    enabled: true
     label: Youtube  
   hackernews: 
     enabled: false
