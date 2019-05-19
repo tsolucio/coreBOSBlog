@@ -36,7 +36,7 @@ As we have said in the past, we are (slowly) moving the UI to [LDS standards](ht
 
  ! Mobile 
 
-The mobile client gets some fixes and enhancements this month.
+The mobile client gets some fixes and enhancements this month. Thanks [Omar](https://github.com/omarllorens)
 
 - add new mobile UI action ExecuteFunctions to call it from javascript. We add some functions from coreBOS base functionality
 - add support to uitype 50: date time field
