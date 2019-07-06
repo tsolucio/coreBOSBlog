@@ -23,7 +23,7 @@ Once we created the API, we implemented the interface using the phpmailer librar
 
 You can get an idea of how that works watching the next video
 
-2do video
+[plugin:youtube](https://youtu.be/9VgDkQfBAM4)
 
 As you can see in the video, not only do we have coreBOS sending emails through SendGrid, which gives us full control and statistics of outgoing emails but we get full status notifications **INSIDE coreBOS**. Note that this is much more powerful than an integration like the typical MailChimp or phplist integrations that existed before as we get all the email events directly in coreBOS and can launch workflows to automate any task in your coreBOS, we just connected a powerful BPM motor to our email outbox. seriously, the power is incredible.
 
