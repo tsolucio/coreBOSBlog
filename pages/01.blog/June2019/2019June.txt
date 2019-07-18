@@ -1,0 +1,104 @@
+cbSR(Calendar)
+ cbSR(CI) exclude hubspot libraries
+cbSR(FileTranslation) eliminate warnings and format code
+cbSR(GenDoc)
+cbSR() indenting
+cbSR(Inventory) edit view
+cbSR(Mail) eliminate warning in mail converter and delete duplicate line of code in merge
+cbSR(Picklist) formatting code
+cbSR() quotes and spaces
+cbSR(Taxes)
+cbSR(Whatsapp/Events)
+sec(TCPDF) eliminate execution bit
+style(Calenda4You) fix formatting error and add command to console
+style(Calendar4You) fixing formatting error on calendar cron
+style() Code Formatting
+style()Code Formatting
+
+chore(BusinessMap) adjust map definition documentation
+chore(BusinessMap) eliminate unused files
+chore(Contacts) substitute variable for direct access
+chore(DefaultDataPopulator) eliminate unused file
+chore(GIT) ignore visual studio code and node_modules files
+chore(LDS) update package version to reflect latest version of code
+chore(Picklist) correct function comments
+chore(ServiceWorker) update form sw-precache to workbox
+chore(UIType76to10) to migrate uitype 76 to 10
+chore(Webservice) eliminate unused code from vtiger crm listypes
+chore(Whatsapp) move log file to logs directory
+doc(GenDoc) document GenDoc global variables
+
+feat(cbMap) add Decisiontable map
+feat(Cron) set last start and end time methods to manipulate execution time dynamically
+feat(Emails) load default user template per origin module
+feat(GenDocLabels) copy label to clipboard on row click
+feat(GenDoc) use module context to obtain variable where to save merged documents so we can have different folders per module
+feat(LDS Styling)GenDoc Merge Label Styling
+feat(Taxes) support default values for individual taxes on product/service and prepate for quickcreate support
+feat(Workflow) new task run webservice for rest request of type json
+feat(Workflow) permit executing manual/system workflows even if they are not immediate
+feat(Workflow) run webservice task adding rest methods with input type url
+
+fix(Autocomplete) correctly validate isPermitted
+fix(BusinessMap) correctly call relatedpanes map in test script
+fix(Calendar4You) google insert cron not permitting events to be deleted
+fix(cbMap) eliminate warning in RecordSet Map
+fix(cbMap) extend field info buisness map accepts more than one field definition in the same map
+fix(cbMap) update minmum occurs of field in field info map
+fix(cbQuestion) decode conditions for query
+fix(Console) validate .service files
+fix(Contacts) get correct portal login template column from database
+fix(Emails) merge with mixed legacy and workflow syntax
+fix(evvtgendoc): token cbCompany now is supported
+fix(FileTranslate) post translations for big language files
+fix(FileTranslation) incorrect filter option
+fix(FileTranslation) use complete set of translation strings for modules
+fix(FileTranslation) use latest translation functionality to get translations
+fix(FileTranslation) write new translations to custom file
+fix(GenDoc) convert checkbox to toggle in direct compile page
+fix(Gendoc) Map Organization tags to cbCompany module.
+fix(GlobalSearch) eliminate warning
+fix(GlobalSearch) use application error message
+fix(Install) eliminate DefaultDataPopulator
+fix(LanguageImport) make methods public as they are used during install
+fix(MailManager) module icon
+fix(ModComments) correctly detect comment creation to get correct permissions
+fix(ModuleTranslation) use language also in cache key to support working with other languages than the current selected one
+fix() Move Global Search Implemetation to Utilities Module
+fix(MsgTemplate) get correct MktAction field names
+fix(Payment) eliminate warnings and bluepay code
+fix(Popup) Added New Event Name for Popup Window
+fix(Product/Service) avoid JS error due to non-existant function
+fix(Product/Service) show taxes in individual rows when editing
+fix(QRScanCode) support html encoded separator and avoid generating qrcode on empty values
+fix(RelatedLists) use main class methods to obtain sort and order so global and session variables are used
+fix(Sendgrid) email sending and notification driver
+fix(Sendgrid) support inline logo and qrcodes
+fix(Sendgrid) workflow attachment format
+fix(ServiceWorker) reduce number of resources
+fix(Sort/Order) use correct module name when class is called in the context of another module (RelatedList)
+fix(Taxes) do not show tax rows if there are no taxes configured
+fix(TaxFields) name table cell container consistently: like all other fields
+fix(Users) sort by admin property missing break
+fix(Utilities) redirect to integrations by default
+fix(Validations) return true if one of the date objects to validate is null
+fix(Webservice) always load product line functionality for inventory modules so they work inside loops in direct scripts
+fix(Webservice) return all picklist values accessible to user including subordinate roles
+fix(Workflow) Add Module Field Picklist in Whatsapp Task Form
+fix(Workflow) change icon buttons to LDS
+i18n(GlobalVariable) load fr extended definitions instead of en
+i18n(Workflow) new task and map
+Merge branch 'changeUITYPE' of https://github.com/shibe2018/corebos into shibe2018-changeUITYPE
+Merge pull request #577 from jonasinaj/lds-styling
+Merge pull request #578 from mocodertz/HubspotIntergration
+Merge pull request #579 from mocodertz/NewEvent
+Merge pull request #583 from glorymoshi/decisiontable
+Merge pull request #584 from glorymoshi/fieldinfoupdatemap
+Merge pull request #585 from mocodertz/MoveSearchFunctionalitytoUtilities
+Merge pull request #586 from tsolucio/runwebservice
+Merge pull request #587 from mocodertz/AddModuleFieldPicklist
+opt(Product/Service) directly load edit template as create template does not exist anymore
+style(GenDoc) apply LDS to document download page
+style(GenDocLabels) LDS layout
+style(GenDoc) module icon, set debug off by default and apply formatting
+update(TCPDF) update to latest version for security and fixes
