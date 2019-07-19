@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: June 2019
 date: 2019/07/21 17:48
 metadata:

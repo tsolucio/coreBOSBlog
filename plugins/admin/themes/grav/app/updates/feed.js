@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { config } from 'grav-config';
 import request from '../utils/request';
 
-const URI = `${config.base_url_relative}/ajax.json/task${config.param_sep}getnewsfeed`;
+const URI = `${config.base_url_relative}/ajax.json/task${config.param_sep}getNewsFeed`;
 
 class Feed {
     constructor() {
@@ -52,9 +52,9 @@ class Feed {
             return;
         }
 
-        this.data.feed_data.forEach((data) => {
-            content.append(data);
-        });
+        if (this.data && this.data.feed_data) {
+            content.append(this.data.feed_data);
+        }
     }
 }
 

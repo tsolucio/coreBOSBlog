@@ -13,14 +13,14 @@ The main reason for developing this plugin was the situation that our website is
 * You'll receive an e-mail notification about the action. (Email plugin required!)
 * All messages and notifications are configurable.
 * Place the user message at every place on your website.
-* Supported translations: en, de, fr
+* Supported translations: en, de, fr, es
 
 ## Setup
 
 * Install the plugin to `/your/site/grav/user/plugins/`
 * Navigate to the plugin-settings in your Admin-Panel and enable Subscriber.
 * Check the settings and enter your sender and receiver e-mail address.
-* Navigate to your page where you want do process the messages. (e.g. `/user/pages/newsletter/default.md`)
+* Navigate to the page where you want to process the messages. (e.g. `/user/pages/newsletter/default.md`)
 * Edit the frontmatter of your page and set these options:
 ```
 title: 'This is my page title'

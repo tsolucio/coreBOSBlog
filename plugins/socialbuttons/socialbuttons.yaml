@@ -33,9 +33,9 @@ buttons:
   vk: 
     enabled: false
     label: VK        
-  email: 
-    enabled: true
-    label: Email
   github: 
     enabled: false
     label: Github 
+  email: 
+    enabled: true
+    label: Email

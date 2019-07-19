@@ -1,26 +1,24 @@
 ---
 title: Home
-blog_url: blog
-body_classes: header-image fullwidth
-
 sitemap:
     changefreq: monthly
-    priority: 1.03
-
+body_classes: 'header-image fullwidth header-animated'
+hero_classes: 'text-light overlay-dark'
+blog_url: blog
 content:
-    items: @self.children
+    items:
+        - '@self.children'
+    limit: 6
     order:
         by: date
         dir: desc
-    limit: 5
     pagination: true
-
+    url_taxonomy_filters: true
 feed:
-    description: coreBOS Blog Posts
     limit: 10
-
+    description: 'coreBOS Blog Posts'
 pagination: true
 ---
 
-# coreBOS Blog
+# &nbsp;
 ## A tale of creatng **awesomazing** software

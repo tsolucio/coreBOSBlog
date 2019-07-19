@@ -1,8 +1,16 @@
 <?php
 
+/**
+ * @package    Grav\Plugin\Login
+ *
+ * @copyright  Copyright (C) 2014 - 2017 RocketTheme, LLC. All rights reserved.
+ * @license    MIT License; see LICENSE file for details.
+ */
+
 namespace Grav\Plugin\Login\RememberMe;
 
 use Birke\Rememberme\Authenticator;
+use Birke\Rememberme\Storage\StorageInterface;
 
 /**
  * RememberMe
@@ -16,7 +24,7 @@ class RememberMe extends Authenticator
     /**
      * Gets storage interface
      *
-     * @return Storage\StorageInterface
+     * @return StorageInterface
      */
     public function getStorage()
     {
@@ -26,7 +34,7 @@ class RememberMe extends Authenticator
     /**
      * Set storage interface
      *
-     * @param Storage\StorageInterface $storage Storage interface
+     * @param StorageInterface $storage Storage interface
      */
     public function setStorage($storage)
     {

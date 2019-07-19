@@ -1,7 +1,7 @@
 // Forms
 form {
 
-    h1, h3 {
+    h1, h3, .form-spacer h3 {
         padding: 0 $padding-default 0.5rem;
         margin: 0 0 1rem;
         font-size: 1.5rem;
@@ -21,9 +21,20 @@ form {
         padding: 1.5rem 3rem;
     }
 
+    .nowrap {
+        white-space: nowrap;
+    }
+
     .form-description {
-        font-weight: bold;
-        font-size: small;
+        p {
+            padding: 0;
+        }
+    }
+
+    .button {
+        @include breakpoint(mobile-only) {
+            padding: 0.25rem 0.5rem;
+        }
     }
 
     .form-field {
@@ -33,6 +44,8 @@ form {
         @include breakpoint(mobile-only) {
             padding-left: 1rem;
         }
+
+
 
         .file-thumbnail-wrapper {
             display: inline-block;
@@ -73,16 +86,20 @@ form {
     }
 
     .form-input-addon-wrapper {
-        display: table-row;
+        display: flex;
 
         .form-input-addon {
-            display: table-cell;
-            min-width: 43px;
-            padding: 0 10px;
-            text-align: center;
+            display: flex;
+            padding: 0 5px;
+            justify-content: center;
+            align-items: center;
+
+            &.copy-to-clipboard {
+                cursor: pointer;
+            }
         }
         input {
-            height: 43px;
+            height: 35px;
             display: table-cell;
         }
         .form-input-prepend {
@@ -106,12 +123,23 @@ form {
         }
     }
 
+    .overlay {
+        padding-top: 1rem;
+        padding-bottom: 1px;
+
+        &.bottom {
+            margin: 2rem auto -2rem auto;
+        }
+    }
+
     .required {
+        display: inline-block;
         font-family: helvetica, arial;
         vertical-align: middle;
-        line-height: 1;
+        line-height: 0;
         font-size: 30px;
-        margin-left: 5px;
+        margin-left: 0px;
+        margin-bottom: -5px;
     }
 
     label {
@@ -119,12 +147,31 @@ form {
         font-weight: 400;
         margin:0;
 
+        p {
+            margin: 0;
+        }
+
         [data-hint] {
             display: inline;
         }
 
+        &.inline {
+            display: inline;
+            vertical-align: middle;
+            margin-right: 15px;
+        }
+
         &.toggleable {
             display: inline;
+        }
+    }
+
+    .form-sublabel {
+        p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin: 10px 20px 0 0;
+            padding: 0;
         }
     }
 
@@ -167,20 +214,32 @@ form {
         z-index: 100000;
     }
 
-    // override horizontal layout
-    .form-column {
-        > .form-field.grid {
-            display: block;
-            > .block {
-                @include flex(0);
-            }
-        }
-
-    }
-
     // vertical alignment of forms
     .grid.vertical {
         @include flex-flow(column);
+    }
+
+    // compact
+    .compact {
+        .form-field {
+            margin-bottom: 0.2rem;
+        }
+
+        .form-list-wrapper {
+            li {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+
+                .form-field {
+                    width: 50%;
+
+                    @include breakpoint(mobile-only) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 
     .form-select-wrapper, .selectize-control.single .selectize-input {
@@ -211,6 +270,21 @@ form {
         }
     }
 
+    .selectize-control.single.plugin-remove_button .selectize-input {
+        .item, .remove-single {
+            cursor: pointer;
+            margin: 0 3px 3px 0;
+            padding: 2px 6px;
+            display: inline-block;
+            border-radius: 2px 0 0 2px !important;
+        }
+        .remove-single {
+            border-radius: 0 2px 2px 0 !important;
+            margin-left: -2px;
+        }
+    }
+
+    .selectize-control.single.plugin-remove_button .selectize-input,
     .selectize-control.multi .selectize-input {
         padding: ($leading-margin / 4) ($leading-margin / 4);
 
@@ -219,9 +293,14 @@ form {
             padding-bottom: 4px;
         }
 
-        > div {
+        .item, .remove-single {
             border-radius: 2px;
             line-height: 1.5;
+        }
+
+        .item > img {
+            max-height: 20px !important;
+            max-width: inherit !important;
         }
     }
 
@@ -237,18 +316,39 @@ form {
         }
     }
 
-    .x-small, .x-small.form-input-addon-wrapper input {
+    .x-small {
         max-width: 5rem !important;
+
+        &.form-input-addon-wrapper {
+            max-width: inherit !important;
+            input {
+                max-width: 5rem !important;
+            }
+        }
     }
 
-    .small, .small.form-input-addon-wrapper input {
+    .small {
         max-width: 10rem !important;
+
+        &.form-input-addon-wrapper {
+            max-width: inherit !important;
+            input {
+                max-width: 10rem !important;
+            }
+        }
     }
 
-    .medium, .medium.form-input-addon-wrapper input {
+    .medium:not(.switch-toggle), .medium.form-input-addon-wrapper input {
         max-width: 20rem;
         textarea {
             height: 7rem;
+        }
+
+        &[data-grav-array-type="container"] {
+            max-width: 100% !important;
+            input[type=text] {
+                width: calc(70% - 110px);
+            }
         }
     }
 
@@ -257,6 +357,13 @@ form {
 
         textarea {
             height: 10rem;
+        }
+
+        &[data-grav-array-type="container"] {
+            max-width: 100% !important;
+            input[type=text] {
+                width: calc(100% - 110px);
+            }
         }
     }
 
@@ -293,8 +400,6 @@ form {
     }
 
     .switch-toggle {
-        // margin-left: 30%;
-
         label {
             cursor: pointer;
         }
@@ -304,7 +409,7 @@ form {
         }
     }
 
-    .dynfields, [data-grav-field="array"] {
+    .dynfields, [data-grav-field="array"], [data-grav-field="multilevel"] {
 
         input[type=text] {
             width: 40%;
@@ -315,10 +420,13 @@ form {
         .form-row {
             display: inline-block;
             width: 100%;
+            margin-right: 0;
+            max-width: 100% !important;
+
             span {
                 padding: 0.5rem;
                 display: inline-block;
-                line-height: 1.7;
+                line-height: 1.5;
                 cursor: pointer;
 
                 &[data-grav-array-action="sort"] {
@@ -331,8 +439,10 @@ form {
                 width: 100%;
             }
         }
+    }
 
-
+    [data-grav-field="multilevel"] input:disabled {
+        background-color: lightgray;
     }
 
     [data-grav-array-type="container"].one-child {
@@ -417,7 +527,12 @@ textarea.frontmatter {
 
 // Sortables
 .form-order-wrapper {
-    ul#ordering {
+
+    .notice {
+        padding: 5px;
+    }
+
+    ul.orderable {
 
         list-style: none;
         margin: 0;
@@ -437,6 +552,10 @@ textarea.frontmatter {
                     position: absolute;
                     right: 10px;
                 }
+            }
+
+            i {
+                font-size: 0.8rem;
             }
         }
     }
@@ -469,6 +588,7 @@ textarea.frontmatter {
             &.collection-collapsed {
                 height: 70px;
                 overflow: hidden;
+                @include transform(translateZ(0));
 
                 @include breakpoint(mobile-only) {
                     height: 120px;
@@ -515,12 +635,13 @@ textarea.frontmatter {
 }
 
 .form-label.block {
+    position: relative;
+
     &:hover {
         z-index: 2;
-
     }
     label {
-        z-index: 3;
+        z-index: 2;
     }
 }
 
@@ -532,7 +653,7 @@ textarea.frontmatter {
     letter-spacing: normal;
 }
 .form-fieldset {
-    margin: 1rem 2rem;
+    margin: 1rem 1.5rem;
 }
 
 .form-fieldset--label {
@@ -594,7 +715,75 @@ textarea.frontmatter {
         height: 39px;
     }
 
-    .switch-toggle label {
+    .switch-toggle {
+        line-height: 37px;
+        margin: 0 5px 5px 0;
+
+    }
+}
+
+[data-grav-field="cron"] {
+    display: flex;
+    align-items: center;
+}
+
+.cron-install {
+
+    margin: 1rem;
+    padding: 0;
+    border-radius: 4px;
+
+    form & pre {
+        padding: 1rem;
+        margin: 0 1.5rem;
+        line-height: 1;
+    }
+    .setup-status {
+        font-weight: bold;
+    }
+}
+
+.cron-status, .backups-history {
+
+    margin-bottom: 4rem;
+
+    .cron-at code {
+        font-size: 120%;
+        padding: 2px 10px;
+        border-radius: 2px;
+    }
+
+    .badge {
         white-space: nowrap;
+    }
+
+    tr {
+
+        &.deleting {
+            background: #efefef;
+            color: #bbb;
+            text-shadow: 0 1px white;
+
+            button, .button {
+                background: #777;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+form .cron-job-list, form .backups-list {
+    li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .form-field.grid {
+        width: calc(50% - 5px);
+
+        @include breakpoint(mobile-only) {
+            width: 100%;
+        }
     }
 }

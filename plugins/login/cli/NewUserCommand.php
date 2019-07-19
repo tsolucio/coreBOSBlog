@@ -1,10 +1,16 @@
 <?php
+/**
+ * @package    Grav\Plugin\Login
+ *
+ * @copyright  Copyright (C) 2014 - 2017 RocketTheme, LLC. All rights reserved.
+ * @license    MIT License; see LICENSE file for details.
+ */
 namespace Grav\Plugin\Console;
 
+use Grav\Common\User\Interfaces\UserCollectionInterface;
 use Grav\Console\ConsoleCommand;
-use Grav\Common\File\CompiledYamlFile;
-use Grav\Common\User\User;
 use Grav\Common\Grav;
+use Grav\Plugin\Login\Login;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Helper\Helper;
 use Symfony\Component\Console\Question\ChoiceQuestion;
@@ -17,11 +23,11 @@ use Symfony\Component\Console\Question\Question;
  */
 class NewUserCommand extends ConsoleCommand
 {
-
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $options = [];
+
+    /** @var Login */
+    protected $login;
 
     /**
      * Configure the command
@@ -83,6 +89,14 @@ class NewUserCommand extends ConsoleCommand
      */
     protected function serve()
     {
+        include __DIR__ . '/../vendor/autoload.php';
+
+        $grav = Grav::instance();
+        if (!isset($grav['login'])) {
+            $grav['login'] = new Login($grav);
+        }
+        $this->login = $grav['login'];
+
         $this->options = [
             'user'        => $this->input->getOption('user'),
             'password1'   => $this->input->getOption('password'),
@@ -101,11 +115,20 @@ class NewUserCommand extends ConsoleCommand
         $this->output->writeln('<green>Creating new user</green>');
         $this->output->writeln('');
 
+        /** @var UserCollectionInterface $users */
+        $users = $grav['accounts'];
+
         if (!$this->options['user']) {
             // Get username and validate
             $question = new Question('Enter a <yellow>username</yellow>: ', 'admin');
-            $question->setValidator(function ($value) {
-                return $this->validate('user', $value);
+            $question->setValidator(function ($value) use ($users) {
+                $this->validate('user', $value);
+
+                if ($users->find($value, ['username'])->exists()) {
+                    throw new \RuntimeException('Username "' . $value . '" already exists, please pick another username');
+                };
+
+                return $value;
             });
 
             $username = $helper->ask($this->input, $this->output, $question);
@@ -113,6 +136,11 @@ class NewUserCommand extends ConsoleCommand
             $username = $this->options['user'];
         }
 
+        $user = $users->load($username);
+        if ($user->exists()) {
+            $this->output->writeln('<red>Failure!</red> User <cyan>' . $data['username'] . '</cyan> already exists!');
+            exit();
+        }
 
         if (!$this->options['password1']) {
             // Get password and validate
@@ -125,9 +153,9 @@ class NewUserCommand extends ConsoleCommand
                 });
             });
 
-            $data['password'] = $password;
+            $user->set('password', $password);
         } else {
-            $data['password'] = $this->options['password1'];
+            $user->set('password', $this->options['password1']);
         }
 
         if (!$this->options['email']) {
@@ -137,9 +165,9 @@ class NewUserCommand extends ConsoleCommand
                 return $this->validate('email', $value);
             });
 
-            $data['email'] = $helper->ask($this->input, $this->output, $question);
+            $user->set('email', $helper->ask($this->input, $this->output, $question));
         } else {
-            $data['email'] = $this->options['email'];
+            $user->set('email', $this->options['email']);
         }
 
         if (!$this->options['permissions']) {
@@ -158,14 +186,34 @@ class NewUserCommand extends ConsoleCommand
 
         switch ($permissions_choice) {
             case 'a':
-                $data['access']['admin'] = ['login' => true, 'super' => true];
+                $access = [
+                    'admin' => [
+                        'login' => true,
+                        'super' => true
+                    ]
+                ];
                 break;
             case 's':
-                $data['access']['site'] = ['login' => true];
+                $access = [
+                    'site' => [
+                        'login' => true
+                    ]
+                ];
                 break;
             case 'b':
-                $data['access']['admin'] = ['login' => true, 'super' => true];
-                $data['access']['site']  = ['login' => true];
+                $access = [
+                    'admin' => [
+                        'login' => true,
+                        'super' => true
+                    ],
+                    'site' => [
+                        'login' => true
+                    ]
+                ];
+        }
+
+        if (isset($access)) {
+            $user->set('access', $access);
         }
 
         if (!$this->options['fullname']) {
@@ -175,18 +223,18 @@ class NewUserCommand extends ConsoleCommand
                 return $this->validate('fullname', $value);
             });
 
-            $data['fullname'] = $helper->ask($this->input, $this->output, $question);
+            $user->set('fullname', $helper->ask($this->input, $this->output, $question));
         } else {
-            $data['fullname'] = $this->options['fullname'];
+            $user->set('fullname', $this->options['fullname']);
         }
 
 
         if (!$this->options['title'] && !count(array_filter($this->options))) {
             // Get title
             $question      = new Question('Enter a <yellow>title</yellow>:    ');
-            $data['title'] = $helper->ask($this->input, $this->output, $question);
+            $user->set('title', $helper->ask($this->input, $this->output, $question));
         } else {
-            $data['title'] = $this->options['title'];
+            $user->set('title', $this->options['title']);
         }
 
         if (!$this->options['state'] && !count(array_filter($this->options))) {
@@ -198,22 +246,18 @@ class NewUserCommand extends ConsoleCommand
             );
 
             $question->setErrorMessage('State %s is invalid.');
-            $data['state'] = $helper->ask($this->input, $this->output, $question);
+            $user->set('state', $helper->ask($this->input, $this->output, $question));
         } else {
-            $data['state'] = $this->options['state'] ?: 'enabled';
+            $user->set('state', $this->options['state'] ?: 'enabled');
         }
 
-        // Lowercase the username for the filename
-        $username = strtolower($username);
-
-        // Create user object and save it
-        $user = new User($data);
-        $file = CompiledYamlFile::instance(Grav::instance()['locator']->findResource('account://' . $username . YAML_EXT, true, true));
-        $user->file($file);
+        $user->validate();
         $user->save();
 
+        $this->invalidateCache();
+
         $this->output->writeln('');
-        $this->output->writeln('<green>Success!</green> User <cyan>' . $username . '</cyan> created.');
+        $this->output->writeln('<green>Success!</green> User <cyan>' . $user->username . '</cyan> created.');
     }
 
     /**
@@ -227,69 +271,15 @@ class NewUserCommand extends ConsoleCommand
     }
 
     /**
-     * @param        $type
-     * @param        $value
+     * @param string $type
+     * @param mixed  $value
      * @param string $extra
      *
-     * @return mixed
+     * @return string
      */
     protected function validate($type, $value, $extra = '')
     {
-        switch ($type) {
-            case 'user':
-                if (!preg_match('/^[a-z0-9_-]{3,16}$/', $value)) {
-                    throw new \RuntimeException('Username should be between 3 and 16 characters, including lowercase letters, numbers, underscores, and hyphens. Uppercase letters, spaces, and special characters are not allowed');
-                }
-                if (file_exists(Grav::instance()['locator']->findResource('account://' . $value . YAML_EXT))) {
-                    throw new \RuntimeException('Username "' . $value . '" already exists, please pick another username');
-                }
-
-                break;
-
-            case 'password1':
-                if (!preg_match('/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/', $value)) {
-                    throw new \RuntimeException('Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters');
-                }
-
-                break;
-
-            case 'password2':
-                if (strcmp($value, $extra)) {
-                    throw new \RuntimeException('Passwords did not match.');
-                }
-
-                break;
-
-            case 'email':
-                if (!preg_match('/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/', $value)) {
-                    throw new \RuntimeException('Not a valid email address');
-                }
-
-                break;
-
-            case 'permissions':
-                if (!in_array($value, ['a', 's', 'b'])) {
-                    throw new \RuntimeException('Permissions ' . $value . ' are invalid.');
-                }
-
-                break;
-
-            case 'fullname':
-                if ($value === null || trim($value) == '') {
-                    throw new \RuntimeException('Fullname cannot be empty');
-                }
-
-                break;
-
-            case 'state':
-                if ($value !== 'enabled' && $value !== 'disabled') {
-                    throw new \RuntimeException('State is not valid');
-                }
-
-                break;
-        }
-
-        return $value;
+        return $this->login->validateField($type, $value, $extra);
     }
 
     /**

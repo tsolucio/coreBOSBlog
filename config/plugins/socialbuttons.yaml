@@ -1,41 +1,41 @@
 enabled: true
 buttons:
-  facebook: 
+  facebook:
     enabled: true
-    label: Facebook  
-  twitter: 
+    label: Facebook
+  twitter:
     enabled: true
-    label: Twitter  
-  googleplus: 
+    label: Twitter
+  googleplus:
     enabled: false
     label: Google+
-  linkedin: 
+  linkedin:
     enabled: true
-    label: Linkedin 
-  reddit: 
+    label: Linkedin
+  reddit:
     enabled: false
-    label: Reddit  
-  youtube: 
+    label: Reddit
+  youtube:
     enabled: true
-    label: Youtube  
-  hackernews: 
+    label: Youtube
+  hackernews:
     enabled: false
-    label: Hackernews  
-  pinterest: 
+    label: Hackernews
+  pinterest:
     enabled: false
-    label: Pinterest    
-  pocket: 
+    label: Pinterest
+  pocket:
     enabled: false
-    label: Pocket     
-  tumblr: 
+    label: Pocket
+  tumblr:
     enabled: false
-    label: Tumblr       
-  vk: 
+    label: Tumblr
+  vk:
     enabled: false
-    label: VK        
-  email: 
+    label: VK
+  github:
+    enabled: true
+    label: Github
+  email:
     enabled: true
     label: Email
-  github: 
-    enabled: false
-    label: Github 

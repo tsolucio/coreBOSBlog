@@ -8,6 +8,10 @@
 
         h1 {
             height: 100px;
+
+            &.custom-logo img {
+                height: 80px;
+            }
         }
 
         form {
@@ -92,6 +96,32 @@
         color: transparent;
         height: 216px;
         margin: 0;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.text-logo {
+            font-size: 4rem;
+        }
+
+        &.custom-logo {
+            img {
+                max-height: 160px;
+            }
+        }
+
+        &.default-logo {
+            svg {
+                height: 320px;
+            }
+        }
+    }
+
+    h5 {
+        margin-top: 0;
+        text-align: center;
     }
 
     form {
@@ -120,6 +150,10 @@
             right: 0;
             padding: 1.5rem 3rem;
 
+            .button {
+                margin-bottom: 2px;
+            }
+
             button:first-child {
                 margin-right: 1rem;
             }
@@ -130,4 +164,27 @@
         text-align: center;
         padding: 1rem 3rem;
     }
+}
+
+.twofa-secret-code {
+      font-weight: bold;
+}
+
+.twofa-wrapper {
+    margin-top: 5px;
+}
+
+
+.twofa-secret {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 600ms, visibility 600ms;
+
+    &.show {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+    }
+
 }

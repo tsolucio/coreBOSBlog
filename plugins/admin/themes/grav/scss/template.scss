@@ -15,7 +15,7 @@
 
 // Load Template Library
 @import "template/modules/base";
-
+@import "template/colors";
 //------------------------------------------
 
 // TEMPLATE COMPONENTS
@@ -25,6 +25,9 @@
 
 // Extensions
 @import "template/extensions";
+
+// Utilities
+@import "template/utilities";
 
 // Header
 @import "template/header";
@@ -83,6 +86,12 @@
 // Notifications
 @import "template/notifications";
 
+// Media
+@import "template/media";
+@import "template/jqcron";
+
+// Tools
+@import "template/tools";
+
 // Custom
 @import "template/custom";
-

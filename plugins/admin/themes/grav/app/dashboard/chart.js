@@ -4,7 +4,7 @@ import { translations } from 'grav-config';
 import { Instance as gpm } from '../utils/gpm';
 import { Instance as updates } from '../updates';
 
-let isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+// let isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
 export const defaults = {
     data: {
@@ -23,7 +23,7 @@ export const defaults = {
         },
         Bar: {
             height: 164,
-            chartPadding: !isFirefox ? 5 : 10, // workaround for older versions of firefox
+            chartPadding: 20, // workaround for older versions of firefox
 
             axisX: {
                 showGrid: false,
@@ -40,7 +40,7 @@ export const defaults = {
                     x: 5,
                     y: 5
                 },
-                scaleMinSpace: !isFirefox ? 20 : 10
+                scaleMinSpace: 25
             }
         }
     }
@@ -61,7 +61,17 @@ export default class Chart {
             data
         });
         this.chart = chartist[this.type](this.element.find('.ct-chart').empty()[0], this.data, this.options);
-        this.chart.on('created', () => this.element.find('.hidden').removeClass('hidden'));
+        this.chart.on('created', () => {
+            this.element.find('.hidden').removeClass('hidden');
+
+            // FIX: workaround for chartist issue not allowing HTML in labels anymore
+            // https://github.com/gionkunz/chartist-js/issues/937
+            this.element.find('.ct-label').each((index, label) => {
+                label = $(label);
+                const text = label.html().replace('&lt;', '<').replace('&gt;', '>');
+                label.html(text);
+            });
+        });
     }
 
     updateData(data) {

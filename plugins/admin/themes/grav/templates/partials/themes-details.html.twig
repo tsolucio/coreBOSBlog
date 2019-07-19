@@ -8,7 +8,7 @@
 <h1>
     {{ theme.name|e }}
     {% if admin.isTeamGrav(theme) %}
-        <small><span class="info-reverse"><i class="fa fa-check-circle" title="Grav Official Theme"></i></span></small>
+        <small><span class="info-reverse"><i class="fa fa-check-circle" title="{{ "PLUGIN_ADMIN.GRAV_OFFICIAL_THEME"|tu }}"></i></span></small>
     {% endif %}
     {% if admin.isPremiumProduct(theme) %}
         <small><span class="badge warning premium"><i class="fa fa-star-o"></i> {{ "PLUGIN_ADMIN.PREMIUM_PRODUCT"|tu }}</span></small>
@@ -35,7 +35,7 @@
                 <td>{{ "PLUGIN_ADMIN.AUTHOR"|tu }}:</td>
                 <td class="double">
                     {% if theme.author.url %}
-                        <a href="{{ theme.author.url }}" target="_blank">{{ theme.author.name }}</a>
+                        <a href="{{ theme.author.url }}" target="_blank" rel="noopener noreferrer">{{ theme.author.name }}</a>
                     {% else %}
                         {{ theme.author.name }}
                     {% endif %}
@@ -48,19 +48,19 @@
         {% if theme.homepage %}
         <tr>
             <td>{{ "PLUGIN_ADMIN.HOMEPAGE"|tu }}:</td>
-            <td class="double"><a href="{{ theme.homepage }}" target="_blank">{{ theme.homepage }}</a></td>
+            <td class="double"><a href="{{ theme.homepage }}" target="_blank" rel="noopener noreferrer">{{ theme.homepage }}</a></td>
         </tr>
         {% endif %}
         {% if theme.demo %}
         <tr>
             <td>{{ "PLUGIN_ADMIN.DEMO"|tu }}:</td>
-            <td class="double"><a href="{{ theme.demo }}" target="_blank">{{ theme.demo }}</a></td>
+            <td class="double"><a href="{{ theme.demo }}" target="_blank" rel="noopener noreferrer">{{ theme.demo }}</a></td>
         </tr>
         {% endif %}
         {% if theme.bugs %}
             <tr>
                 <td>{{ "PLUGIN_ADMIN.BUG_TRACKER"|tu }}:</td>
-                <td class="double"><a href="{{ theme.bugs }}" target="_blank">{{ theme.bugs }}</a></td>
+                <td class="double"><a href="{{ theme.bugs }}" target="_blank" rel="noopener noreferrer">{{ theme.bugs }}</a></td>
             </tr>
         {% endif %}
         {% if theme.keywords %}
@@ -88,7 +88,7 @@
             {% set readme_link = theme.readme ?: theme.homepage ~ '/blob/master/README.md' %}
             <tr>
                 <td>{{ "PLUGIN_ADMIN.README"|tu }}:</td>
-                <td class="double"><a href="{{ readme_link }}" target="_blank">{{ readme_link }}</a></td>
+                <td class="double"><a href="{{ readme_link }}" target="_blank" rel="noopener noreferrer">{{ readme_link }}</a></td>
             </tr>
         {% endif %}
     </table>
@@ -101,6 +101,9 @@
     {% if (config.get('system.pages.theme') != admin.route) %}
     <div class="button-bar danger">
         <span class="danger-zone"></span>
+        {% if not theme.symlink %}
+            <a class="button button-reinstall-package hidden" href="#" data-remodal-target="reinstall-package"><i class="fa fa-fw fa-repeat"></i> {{ "PLUGIN_ADMIN.REINSTALL_THEME"|tu }}</a>
+        {% endif %}
         <a class="button" href="#" data-remodal-target="remove-package"><i class="fa fa-fw fa-warning"></i> {{ "PLUGIN_ADMIN.REMOVE_THEME"|tu }}</a>
     </div>
     {% endif %}
@@ -114,3 +117,4 @@
 {% include 'partials/modal-remove-package.html.twig' with { type: 'theme', package: theme } %}
 {% include 'partials/modal-add-package.html.twig' with { type: 'theme' } %}
 {% include 'partials/modal-update-packages.html.twig' with { type: 'theme' } %}
+{% include 'partials/modal-reinstall-package.html.twig' with { type: 'theme', package: theme } %}

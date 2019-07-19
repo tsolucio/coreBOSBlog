@@ -1,3 +1,16 @@
+# v1.6.0
+## 04/17/2019
+
+1. [](#improved)
+    * Only included published pages in collection [#24](https://github.com/getgrav/grav-plugin-archives/issues/24)
+    * Translate the date to the format specified [#9](https://github.com/getgrav/grav-plugin-archives/pull/9)
+
+# v1.5.1
+## 05/16/2017
+
+1. [](#improved)
+    * Added another date option to blueprints [#7](https://github.com/getgrav/grav-plugin-archives/pull/7)
+
 # v1.5.0
 ## 07/14/2016
 

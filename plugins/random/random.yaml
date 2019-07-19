@@ -1,5 +1,5 @@
 enabled: true
 route: /random
 redirect: true
-filters: { tag: [mission, goals, fork, start, release, webservice, development, usage, case, translation, portal, adoption, webform, progress, birthday, wishes, holiday] }
-filter_combinator: or
+filters: { category: blog}
+filter_combinator: and    

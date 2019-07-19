@@ -1,12 +1,24 @@
-title: coreBOSBlog
+title: COREBOSBLOG
+default_lang: en
 author:
-  name: Joe Bordes
-  email: 'joe@tsolucio.com'
-blog:
-  route: ''
+  name: 'Joe Bordes'
+  email: joe@tsolucio.com
+taxonomies:
+  - category
+  - tag
+  - month
 metadata:
   description: 'coreBOS. The one stop opensource software solution for your business.'
   keywords: 'business,opensource,crm,software,management'
-  author: 'Joe Bordes'
-taxonomies: [tag]
-
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+redirects:
+  /changelog: /blog/the-urban-jungle
+routes:
+  /something/else: /blog/focus-and-blur
+  '/another/one/(.*)': /blog/$1
+blog:
+  route: ''
