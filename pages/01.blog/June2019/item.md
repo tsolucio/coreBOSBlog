@@ -134,6 +134,6 @@ We complete the release of the Hub Spot integration. You can [get some informati
   - document GenDoc global variables
 
 
-![May Insights](corebosgithub1906.png)
+![June Insights](corebosgithub1906.png)
 
 **<span style="font-size:large">Thanks for reading.</span>**

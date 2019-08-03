@@ -10,7 +10,7 @@ header_image_height: 312
 header_image_width: 500
 taxonomy:
     category: blog
-    tag: [implement, 2019, decisions, business map]
+    tag: [implementation, 2019, decisions, business map]
 ---
 
 Making Decisions in coreBOS just got a lot easier. We already had [Condition Expression](https://corebos.com/documentation/doku.php?id=en:adminmanual:businessmappings:condition_expression&noprocess=1) and [Condition Query](https://corebos.com/documentation/doku.php?id=en:adminmanual:businessmappings:condition_query&noprocess=1) **Business Maps** which were put together in [coreBOS Rules](https://corebos.com/documentation/doku.php?id=en:devel:corebos_rules&noprocess=1) to give developers a very powerful condition evaluation engine, and, now, we have added upon this another business map to make it even more flexible: [Decision Table Business Maps](https://corebos.com/documentation/doku.php?id=en:adminmanual:businessmappings:decisiontable&noprocess=1).
