@@ -6,7 +6,7 @@ metadata:
     description: 'Development tutorial on coreBOS events and developer blocks.'
     keywords: 'CRM, vtiger, opensource, corebos, events, developer'
     author: 'Joe Bordes'
-header_image_file: markus-spiske-GDP_CXFHiuI-unsplash.jpg
+header_image_file: markusspiske.jpg
 header_image_height: 371
 header_image_width: 384
 taxonomy:
