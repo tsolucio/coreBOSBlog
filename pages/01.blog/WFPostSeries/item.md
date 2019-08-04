@@ -1,9 +1,9 @@
 ---
-published: false
-title: Workflow Blog Post Series
+published: true
+title: Workflow System
 date: 2019/08/01 13:58
 metadata:
-    description: 'Presenting the new email sending API and how we used it for sendgrid integration'
+    description: 'Presenting the coreBOS workflow and business process management system'
     keywords: 'CRM, vtiger, opensource, corebos, email, sendgrid'
     author: 'Joe Bordes'
 header_image_file: glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg
@@ -11,27 +11,38 @@ header_image_height: 373
 header_image_width: 560
 taxonomy:
     category: blog
-    tag: [implementation, 2019, workflow]
+    tag: [implementation, 2019, workflow, bpm]
 ---
 
-coreBOS now has an abstraction layer to send emails. Instead of the hardcoded phpmailer library, we can easily use any email service to send emails like [SendGrid](https://sendgrid.com/), [MailChimp](https://mailchimp.com/) or [sendinblue](https://sendinblue.com) among others.
+The coreBOS workflow system permits us to automate business processes, it is a powerful BPM engine which we start to shed some light on in this post.
 
 ===
 
-We have created an internal API that abstracts the email service. We can use any email library or service to implement this API and have coreBOS sending emails with that service.
+A workflow in coreBOS is defined as a series of actions that take place when something happens inside the application.
 
-Once we created the API, we implemented the interface using the phpmailer library and set it as the default system to use, **so anyone updating coreBOS will not notice any difference**. Then, to make sure the change was correct we implemented an interface using [SendGrid](https://sendgrid.com/) functionality and released that to the open source project.
+Analyzing that definition we can start to understand the different parts of a workflow.
 
-You can get an idea of how that works watching the next video
+  - a "series of actions" tells us that we will find a set of tasks or processes capable of performing certain work for us in a certain order
+  - "take place when something happens" tells us that coreBOS has some events that will launch or trigger the workflow
 
-[plugin:youtube](https://youtu.be/9VgDkQfBAM4)
+Let's talk about the events and leave the tasks for future posts. coreBOS has [an extensive eventing system](2do) distributed throughout the application which you can plug into using the programming environment. There is a subset of those events that we can listen on in the workflows. These events are:
 
-As you can see in the video, not only do we have coreBOS sending emails through SendGrid, which gives us full control and statistics of outgoing emails but we get full status notifications **INSIDE coreBOS**. Note that this is much more powerful than an integration like the typical MailChimp or phplist integrations that existed before as we get all the email events directly in coreBOS and can launch workflows to automate any task in your coreBOS, we just connected a powerful BPM motor to our email outbox. seriously, the power is incredible.
+  - on save, where we can differentiate between create, update or both
+  - delete
+  - time based
+  - manual launch
 
-Let me express that again. Many people approach us asking for an integration with MailChimp, they want to send their contacts to a MailChimp campaign and get new contacts and status updates from there because MailChimp gives them information about the email campaigns that are sent from there. There are variations on this request like synchronizing information with [HubSpot](https://www.hubspot.com) or [Act-ON](https://www.act-on.com/) (both integrations exist in corebos) because those platforms fill in some additional information. What we are implementing with features like this email API is to get the notification of those events directly inside your coreBOS, where your data already lives. There is no need to send contacts back and forth, send the events directly to coreBOS.
+The actual list of events looks like this
 
-The API requires only three methods and an event handler to return a class path and name where coreBOS can find the three methods. you can [continue reading here](https://corebos.com/documentation/doku.php?id=en:devel:sendemailservice&noprocess=1) for an explanation on how that can be done.
+2do
 
-**<span style="font-size:large">The power of the coreBOS framework continues to grow!</span>**
+Where the events firstnsave, all modification, modification are triggered when a record is saved. The delete event is triggered ritgj before a record is deleted. Note that this a tricky event, if you send an email for example the email will not be sent because all emails are put on a queue and sent in the background by the time the email is actually processed the record has been deleted and 
+
+
+Besides detecting the event and triggering the workflow we can add a condition that must be met to actually launch the workflow.
+
+These conditions is our first encounter with the expression language and require a full blog post for them so remember to follow us on Twitter for the expression functions and tune in next month for the next post
+
+**<span style="font-size:large">Continue reading in the next part of this series.</span>**
 
 <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@glenncarstenspeters?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Glenn Carstens-Peters"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Photo by Glenn Carstens-Peters on Unsplash</span></a>
