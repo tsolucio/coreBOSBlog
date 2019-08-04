@@ -1,5 +1,5 @@
 <div class="card">
-    {% set image = page.media.images|first %}
+    {% set image = page.media.images[page.header.header_image_file] %}
     {% if image %}
     <div class="card-image">
         <a href="{{ page.url }}">{{ image.cropZoom(800,400).html|raw }}</a>
