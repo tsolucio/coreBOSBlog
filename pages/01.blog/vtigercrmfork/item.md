@@ -14,7 +14,7 @@ taxonomy:
     tag: [business, 2019, vtigercrm]
 ---
 
-When I started my blogging career, one of the first things I did was migrate the existing posts, so I read them all again. When I read the first coreBOS is born post I asked myself; would I do it again? How do I feel about it now? And a few other similar questions. So I decided then that I would dedicate a post to answering these questions publically.
+When I started my blogging career, one of the first things I did was migrate the existing posts, so I read them all again. When I read the first [coreBOS is born post](../corebos-is-born) I asked myself; would I do it again? How do I feel about it now? And a few other similar questions. So I decided then that I would dedicate a post to answering these questions publically.
 
 Happy reading, I hope it is as controversial as I intend.
 
