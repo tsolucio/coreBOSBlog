@@ -127,13 +127,13 @@ index.php?action=index&module=Leads&action=LeadsAjax&actionname=test&method=init
 
 where `actionname` is the class name that contains our actions and `method` is the name of the method we want to execute inside the class.
 
-The class must live inside the `actions` directory of the module and must be named exactly as indicated in the actionname parameter.
+The class must live inside the `actions` directory of the module and must be named exactly as indicated in the actionname parameter **followed by `_Action`.**
 
 So the above call would live in:
 
 `modules/Leads/actions/test.php`
 
-We can create multiple methods inside the action class and call each one given the method name in the
+Which contains a class named `test_Action`. We can create multiple methods inside the action class and call each one given the method name in the
 URL (the same way a controller works in a MVC).
 
 There is an example in [this Pull Request](https://github.com/tsolucio/corebos/pull/490/files).
