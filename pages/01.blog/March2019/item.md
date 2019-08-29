@@ -122,7 +122,7 @@ AND(isString($(account_id : (Accounts) accountname)), isNumeric($(account_id : (
 
 The action must be called like this:
 ```
-index.php?action=index&module=Leads&action=LeadsAjax&actionname=test&method=init
+index.php?module=Leads&action=LeadsAjax&actionname=test&method=init
 ```
 
 where `actionname` is the class name that contains our actions and `method` is the name of the method we want to execute inside the class.
