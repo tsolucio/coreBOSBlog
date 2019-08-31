@@ -85,17 +85,17 @@ As per the definition of the PRESAVE event, these functions take full control of
  - callback a callback function if any is necessary
  - any parameters sent by the developer widget
 
+Since the function called in the PRESAVE event takes full control of the save process it must decide to return a "true" value so that the application can continue normally with the save process or a "false", in which case the save will not be continued. Also, this function receives a callback function which it can use to finish the save process itself if it needs to. The callback can be any function, but if it is `dtlViewAjaxFinishSave` then the save is an inline detail view edit and you will have to retrieve all the parameters for this function, additionally, if it isn't a function then you will have to call `submitFormForAction(formName, action)`. It is a lot easier to just return true or false and let coreBOS take care of it, but, if you need it, you have it.
+
 In our case, we will use the javascript "confirm" function to show the message given by the backend and will proceed with the save or not depending on the answer to the dialog. As before, the code can live anywhere inside the application. I put it in modules/Assets/askToProceed.js because I am going to associate this code to the Assets module. The code looks like this:
 
 ``` JS
 function askToProceed(edit_type, formName, action, callback, message) {
 	var goahead = confirm(message);
 	if (goahead) {
-		if (typeof callback == 'function') {
-			callback('submit');
-		} else {
-			submitFormForAction(formName, action);
-		}
+		return true; // continue save process
+	} else {
+		return false; // stops save
 	}
 	VtigerJS_DialogBox.unblock();
 }
