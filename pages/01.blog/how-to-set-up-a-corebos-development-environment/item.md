@@ -1,11 +1,11 @@
 ---
 title: 'How to set up a coreBOS development environment'
 media_order: image.png
-date: '01-12-2019 11:21'
+date: '2019/12/01 11:21'
 metadata:
     description: 'how to set up a coreBOS development environment:git workflow'
     keywords: 'coreBOS, webservice, development, git, github'
-    author: 'Joe Bordes'
+    author: 'Adisa Sinani'
 taxonomy:
     category:
         - blog
@@ -19,8 +19,7 @@ taxonomy:
 header_image_file: image.png
 header_image_width: 622
 header_image_height: 319
-feed:
-    limit: 10
+
 ---
 
 The purpose of this blog post is to help everyone have an empowering and welcoming first experience as they start contributing to the **<span style="color:red;">coreBOS Open Source project</span>**! 
