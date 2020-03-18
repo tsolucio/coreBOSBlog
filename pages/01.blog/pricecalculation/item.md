@@ -54,7 +54,7 @@ As an example, while I was testing I created and selected this map:
 
 ```XML
 <map>
-<expression>if '$[bill_country]' == 'Spain' then 10 else 20 end</expression>
+<expression>if $bill_country == 'Spain' then 10 else 20 end</expression>
 </map>
 ```
 which applies a 10% discount or margin to all Accounts whose billing country is Spain and a 20% discount to all other countries.
