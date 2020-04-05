@@ -1,10 +1,10 @@
 ---
 title: "Record Versioning"
 media_order: "Administrator - Business Maps - coreBOS.png,utilities.png,Administrator - Assets - coreBOS.png,Assets - coreBOS.png,documents.png,assorted-title-cassette-tapes-2796145.jpg"
-date: "01-04-2020 13:58"
+date: "05-04-2020 13:58"
 metadata:
-  description: "record versioning feature"
-  keywords: DuplicateMap
+  description: "Version control of the records in your application"
+  keywords: 'Duplicate Map record version'
   author: "Adisa Sinani"
 taxonomy:
   category:
@@ -16,6 +16,10 @@ taxonomy:
     - "duplicate map"
 header_image_file: assorted-title-cassette-tapes-2796145.jpg
 ---
+
+This month we have a great guest post from [Adisa Sinani](https://github.com/adisasinani) where she explains how the [Record Versioning](https://corebos.com/documentation/doku.php?id=en:adminmanual:recordversioning&noprocess=1) feature implemented by [Lorida Cito](https://github.com/loridacito) a few months ago, works. Enjoy!
+
+===
 
 When it comes to developing, **Version Control** is one of those things that you don’t need until you’re already regretting not having it. True, and one of the sad lessons ...
 
