@@ -70,7 +70,7 @@ Business Questions are on their way to becoming a very important part of the app
  ! Features and Implementor/Developer enhancements
 
 - **Calendar_goDirectToDetailView** global variable to open event detail view directly on click instead of the action popup screen
-- add alert time field per scheduled task for cron watcher to notify differently per task
+- add alert time field per scheduled task for cron watcher to notify differently per task. -1 deactivates the alert completely.
 
 ![scheduled task alert time](cronalerttime.png)
 
