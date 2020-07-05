@@ -1,7 +1,7 @@
 ---
 published: true
 title: coreBOS Updater Automation
-date: 2020/12/01 13:58
+date: 2020/07/05 13:58
 metadata:
     description: 'coreBOS updater: automation of implementor tasks.'
     keywords: 'CRM, vtiger, opensource, corebos, automation'
