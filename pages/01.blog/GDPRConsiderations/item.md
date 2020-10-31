@@ -109,6 +109,7 @@ Keep in mind that this is actually another application independent of coreBOS th
 I hope to have accomplished two things with this article:
 
 1.- transmit the idea that what coreBOS must do to adhere to GDPR lies more in the requirements of your particular GDPR compliance document than in the application
+
 2.- show you some of the possibilities and flexibility of coreBOS to adapt to the needs of your compliance document.
 
 If you need any help adapting your coreBOS to your needs, [contact us](http://corebos.org/page/contact), we probably have solved the issue before, but even if we haven't we will be able to make coreBOS do what you need.
