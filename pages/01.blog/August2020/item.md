@@ -22,7 +22,7 @@ Another verticalization specialized in decision tables, a lot of web service enh
 
 - Web service
   - add information to error message in Web service
-  - add [MassCreate](https://corebos.com/documentation/doku.php?id=en:devel:corebosws:methodreference#crud_mass_operations&noprocess=1) web service method.
+  - add [MassCreate](https://corebos.com/documentation/doku.php?noprocess=1&id=en:devel:corebosws:methodreference#crud_mass_operations) web service method.
       - validating parameters and permission in MassCreate
       - add a check on permission to write and cleanup some variables
       - adding logical operator to lastReferenceId
