@@ -58,7 +58,7 @@ Incredible as that answer may seem, the final result of all those changes should
 
 **Warning** Work on a copy, DO NOT do this on a production install. Copy the install to another directory and database, and work there. These changes are not reversible (or at least not easily reversible)
 
-=> Update an existing install
+**=> Update an existing install**
 
 - copy the directory you want to test with: `cp -a origin destination`
 - copy the database: `mysqldump`, create a new database, and load the dump
@@ -73,7 +73,7 @@ You are ready to test. Please open tickets in github with the prefix **DENORM**.
 
 When you finish, delete the directory and the database.
 
-=> New install
+**=> New install**
 
 I tested the install process and everything should be working if you start fresh, but feel free to give it a try and get back to me if you run into any issue. This is just a normal install but starting from the denormalize_module branch, so the steps would be:
 
@@ -82,7 +82,7 @@ I tested the install process and everything should be working if you start fresh
 - `git checkout denormalize_module`
 - check permissions and launch the normal install process
 
-=> Online testing
+**=> Online testing**
 
 For those of you who just want to give it a test run, I set up an online demo install (using the procedure depicted in the previous section) which [you can access here](http://test.coreboscrm.com/denorm)
 
