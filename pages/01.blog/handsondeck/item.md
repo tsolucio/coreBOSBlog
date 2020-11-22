@@ -11,7 +11,7 @@ header_image_width: 768
 taxonomy:
     category: blog
     tag: [test, denormalize, calendar, 2020]
-header_image_file: 17824.jpeg
+header_image_file: handsdeck.jpg
 ---
 
 We are ready to release three big internal changes. We have validated them but I would like to ask you to give them a try before we release them into the main product.
