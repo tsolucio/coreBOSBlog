@@ -31,7 +31,7 @@ So we share most of our coding efforts, but not all of them. Some because of lic
 
 This service will give you access to some of our private repositories of code and to a coreBOS distribution specialized in marketing which we call **coreBOSCRM**.
 
-The [list of modules can be consulted on the wiki](http://corebos.org/documentation/doku.php?noprocess=1&id=en:extensions:extensions) and at the moment I write this post there are 43 modules available.
+The [list of modules can be consulted on the wiki](https://corebos.org/documentation/doku.php?noprocess=1&id=en:extensions:extensions) and at the moment I write this post there are 43 modules available.
 
 So you get more of our **awesome code** to help you with your implementations and requirements, but there is also something much more important:
 
@@ -73,7 +73,7 @@ We will help you get that working.
 
 **Where can I purchase?**
 
-You can setup a subscription contract on the [Registered Modules page](http://localhost/cbdocs/doku.php?noprocess=1&id=en:extensions:extensions) or send us an email via the [contact us page](http://corebos.org/page/contact).
+You can setup a subscription contract on the [Registered Modules page](https://corebos.org/documentation/doku.php?noprocess=1&id=en:extensions:extensions) or send us an email via the [contact us page](http://corebos.org/page/contact).
 
 **<span style="font-size:large">No matter how you help out, Thanks for your support !!</span>**
 
