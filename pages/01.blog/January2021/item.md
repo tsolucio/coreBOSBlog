@@ -41,7 +41,7 @@ This particular configuration calls the script every 5 minutes and results in ma
 [INFO]: UnblockLoginUsers - not ready to run as the time to run again is not completed
 ```
 
-since this is a background process, that output is sent as an email to the user executing the process (usually www-data). This, rather useless, message is just informing us that all those tasks haven't reached their execution time yet accumulates very rapidly filling the hard disk with a very big /var/mail/www-data file.
+since this is a background process, that output is sent as an email to the user executing the process (usually www-data). This rather useless message (it is just informing us that all those tasks haven't reached their execution time yet) accumulates rapidly filling the hard disk with a very big /var/mail/www-data file.
 
 To avoid this situation we have added a `--quiet` parameter to the script so that the information messages are not emitted, only error messages will be emitted. So, from now on, we should configure our scheduled tasks like this
 
