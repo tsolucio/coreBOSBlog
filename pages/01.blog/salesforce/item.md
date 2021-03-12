@@ -34,7 +34,9 @@ You have full control of your data and project. For good and bad :-)
 
  ! Comparison
 
-As you can see, what I find fundamental and important is probably not what you were expecting when you started reading the article, but I did prepare a more detailed comparison that I will share next. Be warned, this is a **very** opinionated comparison basedon [this feature list from Salesforce](./salesforce-only-in-lightning-features.pdf).
+As you can see, what I find fundamental and important is probably not what you were expecting when you started reading the article. At this point, we all do to many things, it doesn't matter if you choose Salesforce, [put your favorite software here], or coreBOS, they all have more functionality than you are going to use or need. What is important is how flexible the software is to adapt to YOUR needs, what it can do for YOU. 
+
+Anyway, I did prepare a more detailed comparison that I will share next. Be warned, this is a **very** opinionated comparison basedon [this feature list from Salesforce](./salesforce-only-in-lightning-features.pdf).
 
 | Salesforce Feature | State in coreBOS |
 | ------------------ | ---------------- |
