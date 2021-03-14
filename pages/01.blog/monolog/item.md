@@ -89,6 +89,32 @@ $log->fatal(array($one, $two));
 
 Internally, it will set the message to an empty string and pass in the array as the second parameter.
 
+I did some profiling using different ways to send the message to monolog. Following the log4php way we had:
+
+`$log->fatal('>< get_select_options_with_id ' . print_r($option_list, true) . ',' . print_r($selected_key, true) . ',' . $advsearch);`
+
+0.0001528263092041
+
+We used `print_r` to convert the arrays to strings. Now we can pass in arrays directlry so I tried:
+
+`$log->fatal('>< get_select_options_with_id', ['option_list' => $option_list, 'selected_key' => $selected_key, 'advsearch' => $advsearch]);`
+
+0.00021505355834961
+
+This worked as expected, but is similar or even slower than the print_r version which struck me as very odd, so I tried sending in the JSON encoded version, like this
+
+`$log->fatal('>< get_select_options_with_id', [json_encode(['option_list' => $option_list, 'selected_key' => $selected_key, 'advsearch' => $advsearch])]);`
+
+0.000068902969360352
+
+I suppose that monolog does some process on each element of the array we send in and the difference is that in the last version we are sending in only one string element, all the work already done.
+
+Finally it is even faster if you just send in the message, no array at all, like this
+
+`$log->fatal('>< get_select_options_with_id ' . json_encode(['option_list' => $option_list, 'selected_key' => $selected_key, 'dvsearch' => $advsearch]));`
+
+but that breaks the message format consistency we get with the context array
+
 <span></span>
 
  !!! Log handlers
