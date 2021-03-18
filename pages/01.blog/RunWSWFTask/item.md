@@ -3,7 +3,7 @@ title: Run Web Service Workflow Task
 date: 2020/11/13 11:08
 metadata:
     description: 'Learn how to call external applications using the workflow system to get or send information.'
-    keywords: 'CRM, vtiger, opensource, corebos, community, blog'
+    keywords: 'CRM, vtiger, opensource, corebos, workflow, webservice, blog'
     author: 'Joe Bordes'
 header_image_file: domore.jpg
 header_image_height: 248
