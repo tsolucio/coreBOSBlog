@@ -61,7 +61,7 @@ This month we review the whole Web Service API and release the Denormalization P
 - **Workflow Enhancements**
   - add **getIDof** expression function which permits us to obtain a CRMID by searching for a record in a module
   - add **getFromContextSearching** workflow expression function
-  - [add upsert task](https://corebos.com/documentation/doku.php?id=en:upsert_workflows)
+  - [add upsert task](https://corebos.com/documentation/doku.php?id=en:upsert_workflows&noprocess=1)
       - ignore upsert when the given value is negative
       - change array format for reading in coreBOS Rules
       - change variable name
