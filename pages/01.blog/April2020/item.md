@@ -166,7 +166,7 @@ Business Questions are on their way to becoming a very important part of the app
 - add missing NOT expression operator to list of available operations
 - correctly define count function in list of available operations
 - filter emails for calendar based scheduled workflows
-- open evaluation record select popyp screen on field focus in Expression Editor. Like all other capture fields
+- open evaluation record select popup screen on field focus in Expression Editor. Like all other capture fields
 - correct JSON call in update and create of the old version of web service client library
 
 <span></span>
