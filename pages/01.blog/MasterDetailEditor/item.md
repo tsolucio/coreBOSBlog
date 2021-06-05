@@ -23,7 +23,7 @@ As of last month, coreBOS has an opinionated way of supporting a [generic master
 
 Building upon the [Developer Blocks functionality](https://corebos.com/documentation/doku.php?noprocess=1&id=en:devel:add_special_block&#developer_blocks) and the [Toast UI Grid](https://ui.toast.com/tui-grid), which is becoming an integral part of coreBOS, we have added the possibility for anyone to set up a master-detail editor between two modules with a one-to-many relation.
 
-You can [read about the configuration here.](https://corebos.com/documentation/doku.php?noprocess=1&id=en:adminmanual:businessmappings:masterdetailmapping) and watch the video presentation:
+You can [read about the configuration here.](https://corebos.com/documentation/doku.php?noprocess=1&id=en:adminmanual:businessmappings:masterdetailmapping#generic_master_detail) and watch the video presentation:
 
 [plugin:youtube](https://youtu.be/pb05jH-HeBA)
 
