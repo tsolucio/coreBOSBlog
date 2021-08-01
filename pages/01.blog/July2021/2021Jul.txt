@@ -1,0 +1,34 @@
+cbSR(Asterisk/Import) format files
+cbSR(Documents) eliminate whitespace
+cbSR(Workflow)
+fix(Utils) eliminate warning
+fix(Calendar) eliminate warnings
+fix(Comments) eliminate warning moving variable inititalization
+fix(App) cleanup javascript
+fix(App) convert repeated string to variable and change incorrect comma
+fix(App) eliminate unused variables. sonarqube
+fix(App) eliminate/change variables, parameters and functions. sonarqube
+fix(Currency) eliminate useless code
+chore(App) eliminate whitespace and warning, document function header
+chore(MailManager) eliminate obsolete code
+chore(Settings) eliminate unused old Word/RTE merge code
+doc(App) document function headers and change quotes
+doc(App) function headers and comments
+doc(Webservice) fix function headers
+opt(App) Boolean checks should not be inverted php:S1940
+opt(App) eliminate unused function results
+opt(App) use forEach instead of map where we don't modify the original array
+opt(GlobalVariable) eliminate useless column in definitions
+opt(ListSearch) delete duplicate SQL condition
+opt(Mobile/GenDoc) increment database column in one call and use direct SQL value instead of variable
+opt(Workflow) reduce SQL query solumn resultset
+opt(WSApp) simplify switch and optimize conditional
+refactor(Attachments) String literals should not be duplicated: attachment postfix entity string
+refactor(Calendar) apply basic LDS and cleanup event settings
+refactor(GenDoc) change strange variable check for php empty
+refactor(Picklist) String literals should not be duplicated: multipicklist separator
+refactor(Reports) simplify cell print output logic
+sec(DOMPurify) update to 2.3.0
+sec(Sabre) update library to 4.1.5
+sec(Valitron) update to 1.4.10
+
