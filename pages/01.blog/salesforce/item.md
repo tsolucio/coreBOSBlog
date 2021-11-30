@@ -231,10 +231,10 @@ Anyway, I did prepare a more detailed comparison that I will share next. Be warn
 |Customize the Files Detail Page|<span style="background: #CEFFC5;"> supported </span>|
 |Drag Files onto Files and Attachments Related Lists|<span style="background: #FFD3D3;"> not supported </span> on related lists|
 |Authenticate Effortlessly to External File Sources|<span style="background: #FFD3D3;"> not supported </span>. Note there is an old third party extension for this but I would prefer to use MinIO or Nextcloud|
-|Chatter|Acievable with Mattermost integration?  WIP|
+|Chatter|Achievable with Mattermost integration?  WIP|
 |New filters in “what I follow” feed|third party extension|
 |Create a Report on the Top 100 Feed Item Views|<span style="background: #FFD3D3;"> not supported </span>|
-|Identify External Users at a Glance|Acievable with Mattermost integration?  WIP|
+|Identify External Users at a Glance|Achievable with Mattermost integration?  WIP|
 |Live Comments|Mattermost|
 |Mute|Mattermost|
 |See who likes your comment|Mattermost|
@@ -252,14 +252,14 @@ Anyway, I did prepare a more detailed comparison that I will share next. Be warn
 |Feed recommendations|<span style="background: #FFD3D3;"> not supported </span>|
 |Feed refresh|<span style="background: #FFD3D3;"> not supported </span>|
 |In-app notifications|can be accomplished with our mattermost integration|
-|Share a Post with a Group|Acievable with Mattermost integration?  WIP|
-|Group and Profile banners|Acievable with Mattermost integration?  WIP|
-|Manage Members with Ease|Acievable with Mattermost integration?  WIP|
-|Filter Groups to Show Unread Posts|Acievable with Mattermost integration?  WIP|
-|Filter a Profile to See a User’s Posts|Acievable with Mattermost integration?  WIP|
-|See Group Email Notifications on the Group Page|Acievable with Mattermost integration?  WIP|
-|Get Group Info (and Even Join) in the Tile View|Acievable with Mattermost integration?  WIP|
-|Group setup|Acievable with Mattermost integration?  WIP|
+|Share a Post with a Group|Achievable with Mattermost integration?  WIP|
+|Group and Profile banners|Achievable with Mattermost integration?  WIP|
+|Manage Members with Ease|Achievable with Mattermost integration?  WIP|
+|Filter Groups to Show Unread Posts|Achievable with Mattermost integration?  WIP|
+|Filter a Profile to See a User’s Posts|Achievable with Mattermost integration?  WIP|
+|See Group Email Notifications on the Group Page|Achievable with Mattermost integration?  WIP|
+|Get Group Info (and Even Join) in the Tile View|Achievable with Mattermost integration?  WIP|
+|Group setup|Achievable with Mattermost integration?  WIP|
 |Account and Contact Management|<span style="background: #CEFFC5;"> supported </span>|
 |Opportunity Management|<span style="background: #CEFFC5;"> supported </span>|
 |Lead Management|<span style="background: #CEFFC5;"> supported </span>|
