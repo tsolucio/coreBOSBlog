@@ -1,6 +1,6 @@
 ---
 title: "Send Question Name"
-date: 2021/12/04 00:00
+date: 2021/12/05 00:00
 metadata:
   description: "send question workflow task"
   keywords: "question, context, type properties, workflow"
@@ -16,6 +16,8 @@ taxonomy:
 Hello there, we are meeting again :)
 
 This blog post will talk about how we can send files with coreBOS using Business Questions.
+
+===
 
 We add support for Business Questions through the File type.
 Let's get working on the use case analyzed [in the previous blog post](../generatereport) to understand how business questions ultimately facilitate work.
@@ -39,7 +41,7 @@ Notice that the `WHERE` condition isn't the standard SQL syntax.
 !! What are context variables?
 
 Context variables are the variables that can hold different values in different environments. In coreBOS, you can load results depending on the context set by the end-user.
-In our use scenario isn't the end-user who will decide the value of the context but rather the workflow language. What do we mean by that?
+In our use scenario, it isn't the end-user who will decide the value of the context but rather the workflow language. What do we mean by that?
 
 Last time, using Reports, we created a scheduled workflow that looped through all the shop records and found the correspondent report. This implementation comes at the cost of creating as many reports as you have existing shops.
 
@@ -63,13 +65,13 @@ The File type has an extended properties syntax that permits us to define the de
 
 ```JSON
 {
-"filename":"$variablename$",             // special syntax $variablename$ which can be valorized using the workflow language to define the name of the file sent
-"delimiter":";",                         // single character to use as field separator. defaults to comma
-"enclosure":"",                          //single character to enclose strings that contain the delimiter
-"postprocess": "deletedoublequotes",     //removes the double quotes that enclose the strings
+"filename":"$variablename$", // special syntax $variablename$ which can be valorized using the workflow language to define the name of the file sent
+"delimiter":";",             // single character to use as field separator. defaults to comma
+"enclosure":"",              //single character to enclose strings that contain the delimiter
+"postprocess": "deletedoublequotes", //removes the double quotes that enclose the strings
 "format": [
-"date":"Y-m-d",                          // format to use for date fields
-"float":{                                // format to use for decimal/currency fields
+"date":"Y-m-d",              // format to use for date fields
+"float":{                    // format to use for decimal/currency fields
    "decimalseparator":"",
    "grouping":"",
    "numberdecimals":""
@@ -88,7 +90,7 @@ Note:
 - if no formatting is given, then we will apply the current user's settings
 - if no types are given in the columns, we will output the raw result as we do now
 
-Learn more about how to build up powerful business questions [here](https://corebos.com/documentation/doku.php?id=en:adminmanual:businessquestions).
+Learn more about how to build up powerful business questions [here](https://corebos.com/documentation/doku.php?id=en:adminmanual:businessquestions&noprocess=1).
 
 Hope this helps :)
 
