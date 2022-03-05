@@ -43,13 +43,17 @@ The Business Case module can be used for many reasons:
 
 ## Information
 
-^Home Page:|https://github.com/coreBOS/BusinessCase|
-^Release Date:|2022-02-04|
-^License:|VPL|
-^Distribution:|Free|
-^Support Issues:|https://github.com/coreBOS/BusinessCase
-^Support Forum:|http://discussions.corebos.org/|
-^Source:|https://github.com/coreBOS/BusinessCase|
+| | |
+|---|---|
+|**Home Page:**|[https://github.com/coreBOS/BusinessCase](https://github.com/coreBOS/BusinessCase)|
+|**Release Date:**|2022-02-04|
+|**License:**|VPL|
+|**Distribution:**|Free|
+|**Support Issues:**|[https://github.com/coreBOS/BusinessCase](https://github.com/coreBOS/BusinessCase)|
+|**Support Forum:**|[coreBOS Forum](http://discussions.corebos.org/)|
+|**Source:**|[https://github.com/coreBOS/BusinessCase](https://github.com/coreBOS/BusinessCase)|
+
+<br/>
 
 **<span style="font-size:large">Making coreBOS better step by step. Enjoy!</span>**
 
