@@ -6,8 +6,8 @@ metadata:
     keywords: 'CRM, vtiger, opensource, corebos'
     author: 'Joe Bordes'
 header_image_file: IMG-20220314-WA0035.jpg
-header_image_height: 1000
-header_image_width: 750
+header_image_height: 434
+header_image_width: 664
 taxonomy:
     category: blog
     tag: [birthday, wishes, 2022]
