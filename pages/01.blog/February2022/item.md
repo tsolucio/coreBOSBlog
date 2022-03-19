@@ -19,7 +19,7 @@ We start some important projects this month and we get a nice set of visual impr
 
  ! Features and Implementor/Developer enhancements
 
-- **Documents Folder**: We initiate our journey to supporting subfolders in the Documents module. The goal is to have a folder structure that permits to have any document and any subfolders inside. We will create a grid view to navigate this structure and also enhance the WebDAV view to see this structure. This is a breaking change as we convert the existing picklist-based, flat, folder list to a full-fledged module with a recursive relation. We will dedicate a full post to this change as soon as we can.
+- **Documents Folder:** We initiate our journey to supporting subfolders in the Documents module. The goal is to have a folder structure that permits to have any document and any subfolders inside. We will create a grid view to navigate this structure and also enhance the WebDAV view to see this structure. This is a breaking change as we convert the existing picklist-based, flat, folder list to a full-fledged module with a recursive relation. We will dedicate a full post to this change as soon as we can.
   - DocumentFolders: subfolders for Documents module
   - correct function name
   - correct update SQL for folder migration
@@ -32,7 +32,7 @@ We start some important projects this month and we get a nice set of visual impr
   - allow tuigrid to support multiple instances for Documents
   - init tree view for Documents
   - support Documents folder view
-- **LDS Styles**: we continue to apply LDS everywhere. Thanks Egi!
+- **LDS Styles:** we continue to apply LDS everywhere. Thanks Egi!
   - Updated LDS
   - App Launcher UI and new Icons on Settings
   - new buttons on ListView Buttons
@@ -120,6 +120,6 @@ We start some important projects this month and we get a nice set of visual impr
 
 <span></span>
 
-![February Insights](corebosgithub2202.jpg)
+![February Insights](corebosgithub2202.png)
 
 **<span style="font-size:large">Thanks for reading.</span>**
