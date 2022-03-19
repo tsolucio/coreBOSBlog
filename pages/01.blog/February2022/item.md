@@ -6,8 +6,8 @@ metadata:
     keywords: 'CRM, vtiger, opensource, corebos'
     author: 'Joe Bordes'
 header_image_file: February.png
-header_image_height: 219
-header_image_width: 937
+header_image_height: 281
+header_image_width: 1200
 taxonomy:
     category: blog
     tag: [development, 2022, functionality]
