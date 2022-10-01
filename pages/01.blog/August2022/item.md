@@ -118,7 +118,7 @@ No new global variables were added this month.
 - SMS Notifier CSS
 - clock and calendar ToolButton background and draggable
 - fix Translations: escape single quotes in keys
-- Widget) toggle action is submitting the form
+- Widget: toggle action is submitting the form
 - Web Service
   - return the correct set of Users fields in web service after profile change
   - catch invalid module error
@@ -136,6 +136,6 @@ No new global variables were added this month.
 
 <span></span>
 
-![August Insights](corebosgithub2209.png)
+![August Insights](corebosgithub2208.png)
 
 **<span style="font-size:large">Thanks for reading.</span>**

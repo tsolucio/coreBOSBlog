@@ -109,6 +109,6 @@ This is a glimpse of what the new documentation project looks like:
 
 **Congratulations to Denald** who is probably the first person to make more commits than me in a month. Wonderful!!
 
-![July  Insights](corebosgithub2208.png)
+![July Insights](corebosgithub2207.png)
 
 **<span style="font-size:large">Thanks for reading.</span>**
