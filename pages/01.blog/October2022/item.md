@@ -39,15 +39,15 @@ A lot of things to celebrate. Denald not only made more commits than me but has 
   - change RelatedListBlock map format to accept multiple modules
   - show on another module the tree related list block, tooltip
   - Field Dependency: add support for MODE based conditions at the dependency and field level. This permits us to define dependencies that will be applied or not depending on the state of the action. We support:
-    - mode = 0: dependency is applied in all modes
-    - mode = 1: dependency is applied when creating a record
-    - mode = 2: dependency is applied when editing a record
-    - mode = 3: dependency is applied when viewing (DetailView) a record
+      - mode = 0: dependency is applied in all modes
+      - mode = 1: dependency is applied when creating a record
+      - mode = 2: dependency is applied when editing a record
+      - mode = 3: dependency is applied when viewing (DetailView) a record
   - Field Dependency: new directive to include dependency or actions from other records. We can now load a whole branch of the XML into a `dependency` or an `action` making these maps easier to maintain and reducing the amount of duplicate code. This looks like this:
 ```xml
 <dependency>
 <loadfrom>map name or id</loadfrom>
-<dependency>
+</dependency>
 ```
 - convert SQL checkbox to a picklist with Query Type in Business Question. The first step to supporting Clickhouse in the questions. We also merge some pending Clickhouse enhancements. Thanks [Timothy](https://github.com/tebajanga)
 - Widgets:
