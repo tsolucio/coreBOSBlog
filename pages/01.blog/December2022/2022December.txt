@@ -1,0 +1,35 @@
+feat(Calendar) add link type to task moreaction column
+feat(Calendar) pending tasks widget: card and table output
+feat(CancelButton) support for custom action with CANCELGO parameter
+feat(CustomView) add support for related fields in SQL to Filter condition conversion
+feat(CustomView) getConditionsFromSQL2CV: convert SQL to custom view filter syntax
+feat(DetailView) DETAILVIEWACTIONBUTTON business action
+feat(DocPreview) simplify query and support loading any document with docid paramter. add documentation link
+feat(DocPreview) support for business map
+feat(Documents) Adding view pdf link
+feat(GenDoc) conditional blocks
+feat(getFieldValuesFromRecordRecursively) ability to add multiple setFields
+feat(Kanban) add Open menu option
+feat(KeyMetric) move filter creator to hover
+feat(KeyValue) disable database logging in key-value store
+feat(Leads) relate Messages on conversion
+feat(ListView) collapsable actions
+feat(Menu) always add Utilities for admin users
+feat(Menu) typing access visual feedback and better control of typing
+feat(MessageQueue) set default queue manager to database
+feat(Mobile): add new icon to detailview to return to listview
+feat(NotificationPanel) add related with field for pending actions widget
+feat(Notifications) support for any module record in notification panel: ActivityReminder
+feat(Notify) support for generic notifications in notification panel
+feat(PopupFilter) get value from inside uitype10 fields
+feat(ProcessInfo) support popup as validation and business action
+feat(ProcessSetting) functionality action
+feat(Utils) refactor getEntityFieldNames to create getEntityFieldNamesByTableName
+feat(Validation) convert RECORD to crmid if given in screen_values
+feat(Webservice) update or create Product if upsert_conditions is set in the map
+feat(Webservices) add meta infomations for fields in related modules
+feat(Widget) add Slider component
+feat(Widget) Slider, apply dynamic options to the slider widget
+feat(Workflow) getRequest workflow expression function
+feat(Workflow) support multiple ids for getFieldsOf expression
+feat(Widget) Support linked columns in Table, Grid, and Pie question types
