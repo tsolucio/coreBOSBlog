@@ -30,15 +30,16 @@ Twelve new global variables, a bunch of PHP 8.2 preparations, Wizard View, Syste
   - fill in contact when the related entity is selected
   - pending tasks widget: card and table output
 - GenDoc:
-  - format date fields directly and support dots in date marker format: you can now format any date field following its name with a colon and the desired format. You can even use dots for the formatting.
-
-![GenDoc Test Dates](GenDocTestDates.png)
-![GenDoc Test Dates](GenDocTestDates.odt)
-
   - permit not adding template name to saved document
   - support `draw shapes` at top-level document
   - permit setting the name of the generated document using expression maps. you can use the context variables for expression evaluation: GDTemplateID, GDTemplateName, GDTemplateNumber. Use the `GenDoc_Attachment_Name` global variable.
   - support for UnoServer conversion. deprecating unoconv: `GenDoc_Convert_URL_UnoServer`
+  - format date fields directly and support dots in date marker format: you can now format any date field following its name with a colon and the desired format. You can even use dots for the formatting.
+
+![GenDoc Test Dates](GenDocTestDates.png)
+
+[GenDoc Test Dates Open Office Document](GenDocTestDates.odt)
+
 - Master Detail functionality
   - add support for Business Actions
   - hide/show master detail in detail view from map
