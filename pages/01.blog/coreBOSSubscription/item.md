@@ -31,7 +31,7 @@ So we share most of our coding efforts, but not all of them. Some because of lic
 
 This service will give you access to some of our private repositories of code and to a coreBOS distribution specialized in marketing which we call **coreBOSCRM**.
 
-The [list of modules can be consulted on the wiki](https://corebos.org/documentation/doku.php?noprocess=1&id=en:extensions:extensions) and at the moment I write this post there are 43 modules available.
+The [list of modules can be consulted on the wiki](https://corebos.com/docs_grav/extensions-integrations/corebosmodules) and at the moment I write this post there are 43 modules available.
 
 So you get more of our **awesome code** to help you with your implementations and requirements, but there is also something much more important:
 
@@ -63,7 +63,7 @@ Sure! You can use any of the modules and the coreBOSCRM distribution in as many 
 
 No. This is a **do it yourself deal**. If you find an error in a module or find that the module you need hasn't been updated in a while, you can inform us via gitter or the forum and we will fix that as soon as we can. But if you need to understand what a module is for, how to enhance it or simply how to install it you must go the open source community for help.
 
-We also have **support contract services** which will give you support for this code, so [ask about that if you are interested](http://corebos.org/page/contact).
+We also have **support contract services** which will give you support for this code, so [ask about that if you are interested](http://corebos.org/contact).
 
 **How does it work? How will you give me access to the code?**
 
@@ -73,7 +73,7 @@ We will help you get that working.
 
 **Where can I purchase?**
 
-You can setup a subscription contract on the [Registered Modules page](https://corebos.org/documentation/doku.php?noprocess=1&id=en:extensions:extensions) or send us an email via the [contact us page](http://corebos.org/page/contact).
+You can setup a subscription contract on the [Registered Modules page](https://corebos.com/docs_grav/extensions-integrations/corebosmodules) or send us an email via the [contact us page](http://corebos.org/contact).
 
 **<span style="font-size:large">No matter how you help out, Thanks for your support !!</span>**
 
